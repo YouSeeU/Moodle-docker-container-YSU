@@ -21,7 +21,8 @@ RUN apt-get install -y \
 	php-mbstring \
 	php7.0-mbstring \
 	php-memcached \
-	php-memcache
+	php-memcache \
+	git
 RUN apt-get clean \
  	&& rm -rf /var/lib/apt/lists/*
 
@@ -63,3 +64,5 @@ RUN mkdir /unison
 RUN mkdir -p /home/webapp
 
 RUN ln -s /unison /home/webapp/htdocs
+RUN git clone --depth=1 -b MOODLE_33_STABLE git://git.moodle.org/moodle.git /unison
+#RUN wget  "https://download.moodle.org/download.php/stable33/moodle-latest-33.zip"
