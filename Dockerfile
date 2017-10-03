@@ -45,3 +45,15 @@ RUN mv composer.phar /usr/local/bin/composer
 RUN pecl install timezonedb
 RUN sed -i '$ a\extension=timezonedb.so' /etc/php/7.0/apache2/php.ini
 RUN sed -i '$ a\extension=timezonedb.so' /etc/php/7.0/cli/php.ini
+
+
+RUN a2dissite 000-default
+COPY app_vhost.conf /etc/apache2/sites-available/
+COPY app_vhost_ssl.conf /etc/apache2/sites-available/
+RUN a2ensite app_vhost app_vhost_ssl
+
+RUN mkdir -p /usr/local/openssl/include/openssl/ && \
+    ln -s /usr/include/openssl/evp.h /usr/local/openssl/include/openssl/evp.h && \
+    mkdir -p /usr/local/openssl/lib/ && \
+    ln -s /usr/lib/x86_64-linux-gnu/libssl.a /usr/local/openssl/lib/libssl.a && \
+    ln -s /usr/lib/x86_64-linux-gnu/libssl.so /usr/local/openssl/lib/
