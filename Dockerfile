@@ -22,7 +22,6 @@ RUN apt-get install -y \
 	php7.0-mbstring \
 	php-memcached \
 	php-memcache
-
 RUN apt-get clean \
  	&& rm -rf /var/lib/apt/lists/*
 
@@ -57,3 +56,10 @@ RUN mkdir -p /usr/local/openssl/include/openssl/ && \
     mkdir -p /usr/local/openssl/lib/ && \
     ln -s /usr/lib/x86_64-linux-gnu/libssl.a /usr/local/openssl/lib/libssl.a && \
     ln -s /usr/lib/x86_64-linux-gnu/libssl.so /usr/local/openssl/lib/
+
+EXPOSE 80 443
+
+RUN mkdir /unison
+RUN mkdir -p /home/webapp
+
+RUN ln -s /unison /home/webapp/htdocs
