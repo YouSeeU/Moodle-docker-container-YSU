@@ -50,7 +50,7 @@ ENV DATABASE_TYPE="mysqli" \
     MOODLE_PASSWORD="bitnami" \
     MOODLE_SITENAME="New Site" \
     MOODLE_SITENAME_SHORT="New Site short" \
-    MOODLE_USERNAME="admin"
+    MOODLE_USERNAME="admin" \
     YSU_HOST="https://loc-belous.youseeu.com/app_dev.php"
 
 ## install composer
