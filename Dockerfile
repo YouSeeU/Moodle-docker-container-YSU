@@ -22,11 +22,15 @@ RUN apt-get install -y \
 	php7.0-mbstring \
 	php-memcached \
 	php-memcache \
-	git
+	git \
+	php7.0-zip
 RUN apt-get clean \
  	&& rm -rf /var/lib/apt/lists/*
 
-## setup locale
+
+RUN a2enmod rewrite ssl headers
+RUN mkdir /etc/apache2/ssl
+RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/apache2/ssl/app.key -out /etc/apache2/ssl/app.crt -subj /C=US/ST=New\ York/L=New\ York\ City/O=SuperDeveloper/OU=Developers/CN=localhost
 
 # Set the locale
 RUN apt-get clean && apt-get update && apt-get install -y locales
@@ -50,6 +54,8 @@ RUN sed -i '$ a\extension=timezonedb.so' /etc/php/7.0/cli/php.ini
 RUN a2dissite 000-default
 COPY app_vhost.conf /etc/apache2/sites-available/
 COPY app_vhost_ssl.conf /etc/apache2/sites-available/
+RUN rm -rf /etc/apache2/ports.conf
+COPY ports.conf /etc/apache2/
 RUN a2ensite app_vhost app_vhost_ssl
 
 RUN mkdir -p /usr/local/openssl/include/openssl/ && \
@@ -65,4 +71,7 @@ RUN mkdir -p /home/webapp
 
 RUN ln -s /unison /home/webapp/htdocs
 RUN git clone --depth=1 -b MOODLE_33_STABLE git://git.moodle.org/moodle.git /unison
+COPY app_start.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/app_start.sh
+CMD ["/usr/local/bin/app_start.sh"]
 #RUN wget  "https://download.moodle.org/download.php/stable33/moodle-latest-33.zip"
