@@ -51,6 +51,7 @@ ENV DATABASE_TYPE="mysqli" \
     MOODLE_SITENAME="New Site" \
     MOODLE_SITENAME_SHORT="New Site short" \
     MOODLE_USERNAME="admin"
+    YSU_HOST="https://loc-belous.youseeu.com/app_dev.php"
 
 ## install composer
 
@@ -92,5 +93,6 @@ COPY moodle-config.php /unison/config.php
 RUN chown -R root /home/webapp/htdocs
 RUN chmod -R 0755 /home/webapp/htdocs
 COPY app_start.sh /usr/local/bin/
+COPY lti_settings.sql /usr/local/bin/
 RUN chmod +x /usr/local/bin/app_start.sh
 CMD ["/usr/local/bin/app_start.sh"]
