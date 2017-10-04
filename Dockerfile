@@ -38,6 +38,18 @@ RUN locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
+ENV DATABASE_TYPE="mysqli" \
+    MYSQL_HOST="localhost" \
+    MYSQL_DATABASE_NAME="moodle" \
+    MYSQL_PASSWORD="" \
+    MYSQL_PORT_NUMBER="" \
+    MYSQL_USER="root" \
+    MOODLE_EMAIL="user@example.com" \
+    MOODLE_LANGUAGE="en" \
+    MOODLE_PASSWORD="bitnami" \
+    MOODLE_SITENAME="New Site" \
+    MOODLE_SITENAME_SHORT="New Site short" \
+    MOODLE_USERNAME="admin"
 
 ## install composer
 
@@ -81,4 +93,3 @@ RUN chmod -R 0755 /home/webapp/htdocs
 COPY app_start.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/app_start.sh
 CMD ["/usr/local/bin/app_start.sh"]
-#RUN wget  "https://download.moodle.org/download.php/stable33/moodle-latest-33.zip"
