@@ -92,8 +92,5 @@ COPY moodle-config.php /unison/config.php
 RUN chown -R root /home/webapp/htdocs
 RUN chmod -R 0755 /home/webapp/htdocs
 COPY app_start.sh /usr/local/bin/
-COPY app_entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/app_start.sh
-RUN chmod +x /usr/local/bin/app_entrypoint.sh
-ENTRYPOINT ["/usr/local/bin/app_entrypoint.sh"]
 CMD ["/usr/local/bin/app_start.sh"]
