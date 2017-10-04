@@ -71,8 +71,13 @@ RUN mkdir -p /home/webapp
 
 RUN ln -s /unison /home/webapp/htdocs
 RUN mkdir /home/webapp/moodledata
+RUN chmod 0777 /home/webapp/moodledata
 RUN chown www-data -R /home/webapp
 RUN git clone --depth=1 -b MOODLE_33_STABLE git://git.moodle.org/moodle.git /unison
+COPY moodle-config.php /unison/config.php
+
+RUN chown -R root /home/webapp/htdocs
+RUN chmod -R 0755 /home/webapp/htdocs
 COPY app_start.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/app_start.sh
 CMD ["/usr/local/bin/app_start.sh"]
