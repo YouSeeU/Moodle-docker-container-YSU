@@ -70,6 +70,8 @@ RUN mkdir /unison
 RUN mkdir -p /home/webapp
 
 RUN ln -s /unison /home/webapp/htdocs
+RUN mkdir /home/webapp/moodledata
+RUN chown www-data -R /home/webapp
 RUN git clone --depth=1 -b MOODLE_33_STABLE git://git.moodle.org/moodle.git /unison
 COPY app_start.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/app_start.sh
