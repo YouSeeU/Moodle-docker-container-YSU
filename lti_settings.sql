@@ -17,10 +17,6 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База данных: `moodle`
---
-
---
 -- Дамп данных таблицы `mdl_lti_tool_proxies`
 --
 
@@ -41,6 +37,54 @@ INSERT INTO `mdl_lti_types` (`id`, `name`, `baseurl`, `tooldomain`, `state`, `co
 INSERT INTO `mdl_course` (`id`, `category`, `sortorder`, `fullname`, `shortname`, `idnumber`, `summary`, `summaryformat`, `format`, `showgrades`, `newsitems`, `startdate`, `enddate`, `marker`, `maxbytes`, `legacyfiles`, `showreports`, `visible`, `visibleold`, `groupmode`, `groupmodeforce`, `defaultgroupingid`, `lang`, `calendartype`, `theme`, `timecreated`, `timemodified`, `requested`, `enablecompletion`, `completionnotify`, `cacherev`) VALUES
   (2, 1, 10001, 'ysu-dev-course', 'ysu-dev-course', '', '', 1, 'singleactivity', 1, 0, 1507158000, 1538694000, 0, 0, 0, 0, 1, 1, 0, 0, 0, '', '', '', 1507143644, 1507143781, 0, 1, 0, 1507143781);
 
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+--
+-- Дамп данных таблицы `mdl_course_format_options`
+--
+
+INSERT INTO `mdl_course_format_options` (`id`, `courseid`, `format`, `sectionid`, `name`, `value`) VALUES
+  (2, 2, 'singleactivity', 0, 'activitytype', 'lti');
+
+--
+-- Индексы таблицы `mdl_course_format_options`
+--
+ALTER TABLE `mdl_course_format_options`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `mdl_courformopti_couforsec_uix` (`courseid`,`format`,`sectionid`,`name`),
+  ADD KEY `mdl_courformopti_cou_ix` (`courseid`);
+
+--
+-- AUTO_INCREMENT для таблицы `mdl_course_format_options`
+--
+ALTER TABLE `mdl_course_format_options`
+  MODIFY `id` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+--
+-- Дамп данных таблицы `mdl_lti`
+--
+
+INSERT INTO `mdl_lti` (`id`, `course`, `name`, `intro`, `introformat`, `timecreated`, `timemodified`, `typeid`, `toolurl`, `securetoolurl`, `instructorchoicesendname`, `instructorchoicesendemailaddr`, `instructorchoiceallowroster`, `instructorchoiceallowsetting`, `instructorcustomparameters`, `instructorchoiceacceptgrades`, `grade`, `launchcontainer`, `resourcekey`, `password`, `debuglaunch`, `showtitlelaunch`, `showdescriptionlaunch`, `servicesalt`, `icon`, `secureicon`) VALUES
+  (1, 2, 'test activity', '', 1, 1507662408, 1507662408, 1, '', NULL, 1, 1, NULL, NULL, '', 1, 100, 1, NULL, NULL, 0, 1, 0, '59dd1a489c87d7.68638629', NULL, NULL);
+
+--
+-- Индексы таблицы `mdl_lti`
+--
+ALTER TABLE `mdl_lti`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `mdl_lti_cou_ix` (`course`);
+
+--
+-- AUTO_INCREMENT для таблицы `mdl_lti`
+--
+ALTER TABLE `mdl_lti`
+  MODIFY `id` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
