@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: db
--- Время создания: Окт 11 2017 г., 14:34
+-- Время создания: Окт 11 2017 г., 15:03
 -- Версия сервера: 5.6.37
 -- Версия PHP: 7.0.14
 
@@ -822,7 +822,7 @@ CREATE TABLE `mdl_cache_flags` (
 --
 
 INSERT INTO `mdl_cache_flags` (`id`, `flagtype`, `name`, `timemodified`, `value`, `expiry`) VALUES
-(1, 'userpreferenceschanged', '2', 1507732440, '1', 1507739640),
+(1, 'userpreferenceschanged', '2', 1507733875, '1', 1507741075),
 (2, 'accesslib/dirtycontexts', '/1/3/21', 1507732334, '1', 1507739534);
 
 -- --------------------------------------------------------
@@ -8872,7 +8872,14 @@ INSERT INTO `mdl_logstore_standard_log` (`id`, `eventname`, `component`, `action
 (21, '\\core\\event\\user_loggedout', 'core', 'loggedout', 'user', 'user', 2, 'r', 0, 1, 10, 0, 2, 0, NULL, 0, 'a:1:{s:9:\"sessionid\";s:26:\"hlqhn1g804kga97g8lqktk8i97\";}', 1507732415, 'web', '172.22.0.1', NULL),
 (22, '\\core\\event\\user_loggedin', 'core', 'loggedin', 'user', 'user', 2, 'r', 0, 1, 10, 0, 2, 0, NULL, 0, 'a:1:{s:8:\"username\";s:5:\"admin\";}', 1507732421, 'web', '172.22.0.1', NULL),
 (23, '\\core\\event\\dashboard_viewed', 'core', 'viewed', 'dashboard', NULL, NULL, 'r', 0, 5, 30, 2, 2, 0, 2, 0, 'N;', 1507732422, 'web', '172.22.0.1', NULL),
-(24, '\\mod_lti\\event\\course_module_viewed', 'mod_lti', 'viewed', 'course_module', 'lti', 1, 'r', 2, 22, 70, 1, 2, 2, NULL, 0, 'N;', 1507732443, 'web', '172.22.0.1', NULL);
+(24, '\\mod_lti\\event\\course_module_viewed', 'mod_lti', 'viewed', 'course_module', 'lti', 1, 'r', 2, 22, 70, 1, 2, 2, NULL, 0, 'N;', 1507732443, 'web', '172.22.0.1', NULL),
+(25, '\\core\\event\\course_viewed', 'core', 'viewed', 'course', NULL, NULL, 'r', 2, 2, 50, 1, 0, 1, NULL, 0, 'N;', 1507733827, 'web', '172.22.0.1', NULL),
+(26, '\\core\\event\\user_loggedin', 'core', 'loggedin', 'user', 'user', 2, 'r', 0, 1, 10, 0, 2, 0, NULL, 0, 'a:1:{s:8:\"username\";s:5:\"admin\";}', 1507733875, 'web', '172.22.0.1', NULL),
+(27, '\\core\\event\\dashboard_viewed', 'core', 'viewed', 'dashboard', NULL, NULL, 'r', 0, 5, 30, 2, 2, 0, 2, 0, 'N;', 1507733876, 'web', '172.22.0.1', NULL),
+(28, '\\mod_lti\\event\\course_module_viewed', 'mod_lti', 'viewed', 'course_module', 'lti', 1, 'r', 2, 22, 70, 1, 2, 2, NULL, 0, 'N;', 1507733879, 'web', '172.22.0.1', NULL),
+(29, '\\core\\event\\dashboard_viewed', 'core', 'viewed', 'dashboard', NULL, NULL, 'r', 0, 5, 30, 2, 2, 0, 2, 0, 'N;', 1507733929, 'web', '172.22.0.1', NULL),
+(30, '\\core\\event\\dashboard_viewed', 'core', 'viewed', 'dashboard', NULL, NULL, 'r', 0, 5, 30, 2, 2, 0, 2, 0, 'N;', 1507734150, 'web', '172.22.0.1', NULL),
+(31, '\\mod_lti\\event\\course_module_viewed', 'mod_lti', 'viewed', 'course_module', 'lti', 1, 'r', 2, 22, 70, 1, 2, 2, NULL, 0, 'N;', 1507734153, 'web', '172.22.0.1', NULL);
 
 -- --------------------------------------------------------
 
@@ -9237,7 +9244,7 @@ CREATE TABLE `mdl_lti_types` (
 --
 
 INSERT INTO `mdl_lti_types` (`id`, `name`, `baseurl`, `tooldomain`, `state`, `course`, `coursevisible`, `toolproxyid`, `enabledcapability`, `parameter`, `icon`, `secureicon`, `createdby`, `timecreated`, `timemodified`, `description`) VALUES
-(1, 'YouSeeU', 'https://loc-belous.cs-dev.youseeu.com/app_dev.php/lti/moodle-dev/connect', 'loc-belous.cs-dev.youseeu.com', 1, 1, 1, 1, 'Context.id\nCourseSection.sourcedId\nPerson.email.primary\nPerson.name.given\nPerson.name.family\nPerson.name.full\nPerson.sourcedId\nUser.id\nMembership.role\nResult.autocreate\nResult.sourcedId\nToolProxy.custom.url\nToolProxyBinding.custom.url\nLtiLink.custom.url\nToolProxyBinding.memberships.url\nLtiLink.memberships.url', 'system_setting_url=$ToolProxy.custom.url\ncontext_setting_url=$ToolProxyBinding.custom.url\nlink_setting_url=$LtiLink.custom.url\ncontext_memberships_url=$ToolProxyBinding.memberships.url\nlink_memberships_url=$LtiLink.memberships.url', NULL, NULL, 0, 1507732242, 1507732294, NULL);
+(1, 'YouSeeU', 'https://localhost/app_dev.php/lti/moodle-dev/connect', 'localhost', 1, 1, 1, 1, 'Context.id\nCourseSection.sourcedId\nPerson.email.primary\nPerson.name.given\nPerson.name.family\nPerson.name.full\nPerson.sourcedId\nUser.id\nMembership.role\nResult.autocreate\nResult.sourcedId\nToolProxy.custom.url\nToolProxyBinding.custom.url\nLtiLink.custom.url\nToolProxyBinding.memberships.url\nLtiLink.memberships.url', 'system_setting_url=$ToolProxy.custom.url\ncontext_setting_url=$ToolProxyBinding.custom.url\nlink_setting_url=$LtiLink.custom.url\ncontext_memberships_url=$ToolProxyBinding.memberships.url\nlink_memberships_url=$LtiLink.memberships.url', NULL, NULL, 0, 1507732242, 1507732294, NULL);
 
 -- --------------------------------------------------------
 
@@ -12853,7 +12860,7 @@ CREATE TABLE `mdl_sessions` (
 --
 
 INSERT INTO `mdl_sessions` (`id`, `state`, `sid`, `userid`, `sessdata`, `timecreated`, `timemodified`, `firstip`, `lastip`) VALUES
-(6, 0, 'aablpq6o6raq3mt1d0b8f6bap5', 2, NULL, 1507732421, 1507732443, '172.22.0.1', '172.22.0.1');
+(8, 0, 'nm3tdvei1ocun91dt3ce7hr5k5', 2, NULL, 1507733875, 1507734142, '172.22.0.1', '172.22.0.1');
 
 -- --------------------------------------------------------
 
@@ -14813,7 +14820,7 @@ CREATE TABLE `mdl_user` (
 
 INSERT INTO `mdl_user` (`id`, `auth`, `confirmed`, `policyagreed`, `deleted`, `suspended`, `mnethostid`, `username`, `password`, `idnumber`, `firstname`, `lastname`, `email`, `emailstop`, `icq`, `skype`, `yahoo`, `aim`, `msn`, `phone1`, `phone2`, `institution`, `department`, `address`, `city`, `country`, `lang`, `calendartype`, `theme`, `timezone`, `firstaccess`, `lastaccess`, `lastlogin`, `currentlogin`, `lastip`, `secret`, `picture`, `url`, `description`, `descriptionformat`, `mailformat`, `maildigest`, `maildisplay`, `autosubscribe`, `trackforums`, `timecreated`, `timemodified`, `trustbitmask`, `imagealt`, `lastnamephonetic`, `firstnamephonetic`, `middlename`, `alternatename`) VALUES
 (1, 'manual', 1, 0, 0, 0, 1, 'guest', '$2y$10$E14PjUEHt2QIhTSTdV3A5ewCdnsyhmLxc2BakdANzpaEtTBhLHY5y', '', 'Guest user', ' ', 'root@localhost', 0, '', '', '', '', '', '', '', '', '', '', '', '', 'en', 'gregorian', '', '99', 0, 0, 0, 0, '', '', 0, '', 'This user is a special user that allows read-only access to some courses.', 1, 1, 0, 2, 1, 0, 0, 1507731975, 0, NULL, NULL, NULL, NULL, NULL),
-(2, 'manual', 1, 0, 0, 0, 1, 'admin', '$2y$10$ABDtQDdu1QI12A9DurAMfu1vI1ksWXmstIqo0ro0zv8QrKqQYof2.', '', 'Admin', 'User', 'user@example.com', 0, '', '', '', '', '', '', '', '', '', '', '', '', 'en', 'gregorian', '', '99', 1507732114, 1507732421, 1507732397, 1507732421, '172.22.0.1', '', 0, '', NULL, 1, 1, 0, 1, 1, 0, 0, 1507731975, 0, NULL, NULL, NULL, NULL, NULL);
+(2, 'manual', 1, 0, 0, 0, 1, 'admin', '$2y$10$ABDtQDdu1QI12A9DurAMfu1vI1ksWXmstIqo0ro0zv8QrKqQYof2.', '', 'Admin', 'User', 'user@example.com', 0, '', '', '', '', '', '', '', '', '', '', '', '', 'en', 'gregorian', '', '99', 1507732114, 1507734142, 1507732421, 1507733875, '172.22.0.1', '', 0, '', NULL, 1, 1, 0, 1, 1, 0, 0, 1507731975, 0, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -14933,7 +14940,7 @@ CREATE TABLE `mdl_user_lastaccess` (
 --
 
 INSERT INTO `mdl_user_lastaccess` (`id`, `userid`, `courseid`, `timeaccess`) VALUES
-(1, 2, 2, 1507732443);
+(1, 2, 2, 1507734153);
 
 -- --------------------------------------------------------
 
@@ -19485,7 +19492,7 @@ ALTER TABLE `mdl_log`
 -- AUTO_INCREMENT для таблицы `mdl_logstore_standard_log`
 --
 ALTER TABLE `mdl_logstore_standard_log`
-  MODIFY `id` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 --
 -- AUTO_INCREMENT для таблицы `mdl_log_display`
 --
@@ -20100,7 +20107,7 @@ ALTER TABLE `mdl_scorm_seq_ruleconds`
 -- AUTO_INCREMENT для таблицы `mdl_sessions`
 --
 ALTER TABLE `mdl_sessions`
-  MODIFY `id` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT для таблицы `mdl_stats_daily`
 --
