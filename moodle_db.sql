@@ -6,7 +6,7 @@
 -- Время создания: Окт 11 2017 г., 15:25
 -- Версия сервера: 5.6.37
 -- Версия PHP: 7.0.14
-
+SET @domain = "${YSU_HOST}"
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
