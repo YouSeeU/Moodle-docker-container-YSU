@@ -3,10 +3,10 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: db
--- Время создания: Окт 11 2017 г., 15:25
+-- Время создания: Окт 18 2017 г., 09:57
 -- Версия сервера: 5.6.37
 -- Версия PHP: 7.0.14
-SET @domain = "${YSU_HOST}";
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
@@ -822,8 +822,9 @@ CREATE TABLE `mdl_cache_flags` (
 --
 
 INSERT INTO `mdl_cache_flags` (`id`, `flagtype`, `name`, `timemodified`, `value`, `expiry`) VALUES
-(1, 'userpreferenceschanged', '2', 1507735226, '1', 1507742426),
-(2, 'accesslib/dirtycontexts', '/1/3/21', 1507732334, '1', 1507739534);
+(1, 'userpreferenceschanged', '2', 1508320119, '1', 1508327319),
+(2, 'accesslib/dirtycontexts', '/1/3/21', 1507732334, '1', 1507739534),
+(3, 'accesslib/dirtycontexts', '/1', 1508320398, '1', 1508327598);
 
 -- --------------------------------------------------------
 
@@ -1963,11 +1964,11 @@ INSERT INTO `mdl_config` (`id`, `name`, `value`) VALUES
 (23, 'mnet_all_hosts_id', '2'),
 (24, 'siteguest', '1'),
 (25, 'siteadmins', '2'),
-(26, 'themerev', '1507732017'),
-(27, 'jsrev', '1507732017'),
+(26, 'themerev', '1508320400'),
+(27, 'jsrev', '1508320401'),
 (28, 'gdversion', '2'),
 (29, 'licenses', 'unknown,allrightsreserved,public,cc,cc-nd,cc-nc-nd,cc-nc,cc-nc-sa,cc-sa'),
-(30, 'version', '2017051502.06'),
+(30, 'version', '2017051502.07'),
 (31, 'enableoutcomes', '0'),
 (32, 'usecomments', '1'),
 (33, 'usetags', '1'),
@@ -2090,7 +2091,7 @@ INSERT INTO `mdl_config` (`id`, `name`, `value`) VALUES
 (150, 'lang', 'en'),
 (151, 'langmenu', '1'),
 (152, 'langlist', ''),
-(153, 'langrev', '1507732041'),
+(153, 'langrev', '1508320402'),
 (154, 'langcache', '1'),
 (155, 'langstringcache', '1'),
 (156, 'locale', ''),
@@ -2307,11 +2308,11 @@ INSERT INTO `mdl_config` (`id`, `name`, `value`) VALUES
 (367, 'profilingallowall', '0'),
 (368, 'profilinglifetime', '1440'),
 (369, 'profilingimportprefix', '(I)'),
-(370, 'release', '3.3.2+ (Build: 20171006)'),
+(370, 'release', '3.3.2+ (Build: 20171013)'),
 (371, 'branch', '33'),
-(372, 'localcachedirpurged', '1507732017'),
-(373, 'scheduledtaskreset', '1507732017'),
-(374, 'allversionshash', 'a378add8bf8cf11b7dc52d8551d5744495ac5cdb'),
+(372, 'localcachedirpurged', '1508320400'),
+(373, 'scheduledtaskreset', '1508320400'),
+(374, 'allversionshash', '803af38f6993f00fff046b748dffe9b2722c0997'),
 (375, 'notloggedinroleid', '6'),
 (376, 'guestroleid', '6'),
 (377, 'defaultuserroleid', '7'),
@@ -4228,7 +4229,7 @@ INSERT INTO `mdl_config_plugins` (`id`, `plugin`, `name`, `value`) VALUES
 (220, 'mod_data', 'version', '2017051500'),
 (221, 'mod_feedback', 'version', '2017051500'),
 (223, 'mod_folder', 'version', '2017051500'),
-(225, 'mod_forum', 'version', '2017051500'),
+(225, 'mod_forum', 'version', '2017051501'),
 (226, 'mod_glossary', 'version', '2017051500'),
 (227, 'mod_imscp', 'version', '2017051500'),
 (229, 'mod_label', 'version', '2017051501'),
@@ -5870,8 +5871,8 @@ CREATE TABLE `mdl_course` (
 --
 
 INSERT INTO `mdl_course` (`id`, `category`, `sortorder`, `fullname`, `shortname`, `idnumber`, `summary`, `summaryformat`, `format`, `showgrades`, `newsitems`, `startdate`, `enddate`, `marker`, `maxbytes`, `legacyfiles`, `showreports`, `visible`, `visibleold`, `groupmode`, `groupmodeforce`, `defaultgroupingid`, `lang`, `calendartype`, `theme`, `timecreated`, `timemodified`, `requested`, `enablecompletion`, `completionnotify`, `cacherev`) VALUES
-(1, 0, 1, 'YSU', 'New', '', NULL, 0, 'site', 1, 3, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, '', '', '', 1507731974, 1507732043, 0, 0, 0, 1507732043),
-(2, 1, 10001, 'Developer course', 'Developer course', '', '', 1, 'singleactivity', 1, 0, 1507762800, 1539298800, 0, 0, 0, 0, 1, 1, 0, 0, 0, '', '', '', 1507732173, 1507732191, 0, 1, 0, 1507732366);
+(1, 0, 1, 'YSU', 'New', '', '', 0, 'site', 1, 3, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, '', '', '', 1507731974, 1508320462, 0, 0, 0, 1508320401),
+(2, 1, 10001, 'Developer course', 'Developer course', '', '', 1, 'singleactivity', 1, 0, 1507762800, 1539298800, 0, 0, 0, 0, 1, 1, 0, 0, 0, '', '', '', 1507732173, 1507732191, 0, 1, 0, 1508320401);
 
 -- --------------------------------------------------------
 
@@ -7126,271 +7127,271 @@ CREATE TABLE `mdl_external_services_functions` (
 --
 
 INSERT INTO `mdl_external_services_functions` (`id`, `externalserviceid`, `functionname`) VALUES
-(1, 1, 'core_badges_get_user_badges'),
-(2, 1, 'core_calendar_create_calendar_events'),
-(3, 1, 'core_calendar_delete_calendar_events'),
-(4, 1, 'core_calendar_get_calendar_events'),
-(5, 1, 'core_calendar_get_action_events_by_timesort'),
-(6, 1, 'core_calendar_get_action_events_by_course'),
-(7, 1, 'core_calendar_get_action_events_by_courses'),
-(8, 1, 'core_comment_get_comments'),
-(9, 1, 'core_completion_get_activities_completion_status'),
-(10, 1, 'core_completion_get_course_completion_status'),
-(11, 1, 'core_completion_mark_course_self_completed'),
-(12, 1, 'core_completion_update_activity_completion_status_manually'),
-(13, 1, 'core_course_get_categories'),
-(14, 1, 'core_course_get_contents'),
-(15, 1, 'core_course_get_course_module'),
-(16, 1, 'core_course_get_course_module_by_instance'),
-(17, 1, 'core_course_get_courses'),
-(18, 1, 'core_course_search_courses'),
-(19, 1, 'core_course_view_course'),
-(20, 1, 'core_course_get_activities_overview'),
-(21, 1, 'core_course_get_user_navigation_options'),
-(22, 1, 'core_course_get_user_administration_options'),
-(23, 1, 'core_course_get_courses_by_field'),
-(24, 1, 'core_course_check_updates'),
-(25, 1, 'core_course_get_updates_since'),
-(26, 1, 'core_enrol_get_course_enrolment_methods'),
-(27, 1, 'core_enrol_get_enrolled_users'),
-(28, 1, 'core_enrol_get_users_courses'),
-(29, 1, 'core_files_get_files'),
-(30, 1, 'core_get_component_strings'),
-(31, 1, 'core_group_get_activity_allowed_groups'),
-(32, 1, 'core_group_get_activity_groupmode'),
-(33, 1, 'core_group_get_course_user_groups'),
-(34, 1, 'core_message_block_contacts'),
-(35, 1, 'core_message_create_contacts'),
-(36, 1, 'core_message_delete_contacts'),
-(37, 1, 'core_message_delete_conversation'),
-(38, 1, 'core_message_delete_message'),
-(39, 1, 'core_message_get_blocked_users'),
-(40, 1, 'core_message_data_for_messagearea_search_messages'),
-(41, 1, 'core_message_data_for_messagearea_conversations'),
-(42, 1, 'core_message_data_for_messagearea_contacts'),
-(43, 1, 'core_message_data_for_messagearea_messages'),
-(44, 1, 'core_message_get_contacts'),
-(45, 1, 'core_message_get_messages'),
-(46, 1, 'core_message_get_unread_conversations_count'),
-(47, 1, 'core_message_mark_all_notifications_as_read'),
-(48, 1, 'core_message_mark_all_messages_as_read'),
-(49, 1, 'core_message_mark_message_read'),
-(50, 1, 'core_message_message_processor_config_form'),
-(51, 1, 'core_message_search_contacts'),
-(52, 1, 'core_message_send_instant_messages'),
-(53, 1, 'core_message_unblock_contacts'),
-(54, 1, 'core_message_get_user_notification_preferences'),
-(55, 1, 'core_message_get_user_message_preferences'),
-(56, 1, 'core_notes_create_notes'),
-(57, 1, 'core_notes_delete_notes'),
-(58, 1, 'core_notes_get_course_notes'),
-(59, 1, 'core_notes_view_notes'),
-(60, 1, 'core_question_update_flag'),
-(61, 1, 'core_rating_get_item_ratings'),
-(62, 1, 'core_rating_add_rating'),
-(63, 1, 'core_user_add_user_device'),
-(64, 1, 'core_user_add_user_private_files'),
-(65, 1, 'core_user_get_course_user_profiles'),
-(66, 1, 'core_user_get_users_by_field'),
-(67, 1, 'core_user_remove_user_device'),
-(68, 1, 'core_user_update_user_preferences'),
-(69, 1, 'core_user_view_user_list'),
-(70, 1, 'core_user_view_user_profile'),
-(71, 1, 'core_user_get_user_preferences'),
-(72, 1, 'core_user_update_picture'),
-(73, 1, 'core_user_agree_site_policy'),
-(74, 1, 'core_competency_competency_viewed'),
-(75, 1, 'core_competency_list_course_competencies'),
-(76, 1, 'core_competency_get_scale_values'),
-(77, 1, 'core_competency_user_competency_viewed'),
-(78, 1, 'core_competency_user_competency_viewed_in_plan'),
-(79, 1, 'core_competency_user_competency_viewed_in_course'),
-(80, 1, 'core_competency_user_competency_plan_viewed'),
-(81, 1, 'core_competency_grade_competency_in_course'),
-(82, 1, 'core_competency_delete_evidence'),
-(83, 1, 'core_webservice_get_site_info'),
-(84, 1, 'core_block_get_course_blocks'),
-(85, 1, 'mod_assign_get_grades'),
-(86, 1, 'mod_assign_get_assignments'),
-(87, 1, 'mod_assign_get_submissions'),
-(88, 1, 'mod_assign_get_user_flags'),
-(89, 1, 'mod_assign_set_user_flags'),
-(90, 1, 'mod_assign_get_user_mappings'),
-(91, 1, 'mod_assign_revert_submissions_to_draft'),
-(92, 1, 'mod_assign_lock_submissions'),
-(93, 1, 'mod_assign_unlock_submissions'),
-(94, 1, 'mod_assign_save_submission'),
-(95, 1, 'mod_assign_submit_for_grading'),
-(96, 1, 'mod_assign_save_grade'),
-(97, 1, 'mod_assign_save_grades'),
-(98, 1, 'mod_assign_save_user_extensions'),
-(99, 1, 'mod_assign_reveal_identities'),
-(100, 1, 'mod_assign_view_grading_table'),
-(101, 1, 'mod_assign_view_submission_status'),
-(102, 1, 'mod_assign_get_submission_status'),
-(103, 1, 'mod_assign_list_participants'),
-(104, 1, 'mod_assign_submit_grading_form'),
-(105, 1, 'mod_assign_get_participant'),
-(106, 1, 'mod_assign_view_assign'),
-(107, 1, 'mod_book_view_book'),
-(108, 1, 'mod_book_get_books_by_courses'),
-(109, 1, 'mod_chat_login_user'),
-(110, 1, 'mod_chat_get_chat_users'),
-(111, 1, 'mod_chat_send_chat_message'),
-(112, 1, 'mod_chat_get_chat_latest_messages'),
-(113, 1, 'mod_chat_view_chat'),
-(114, 1, 'mod_chat_get_chats_by_courses'),
-(115, 1, 'mod_choice_get_choice_results'),
-(116, 1, 'mod_choice_get_choice_options'),
-(117, 1, 'mod_choice_submit_choice_response'),
-(118, 1, 'mod_choice_view_choice'),
-(119, 1, 'mod_choice_get_choices_by_courses'),
-(120, 1, 'mod_choice_delete_choice_responses'),
-(121, 1, 'mod_data_get_databases_by_courses'),
-(122, 1, 'mod_data_view_database'),
-(123, 1, 'mod_data_get_data_access_information'),
-(124, 1, 'mod_data_get_entries'),
-(125, 1, 'mod_data_get_entry'),
-(126, 1, 'mod_data_get_fields'),
-(127, 1, 'mod_data_search_entries'),
-(128, 1, 'mod_data_approve_entry'),
-(129, 1, 'mod_data_delete_entry'),
-(130, 1, 'mod_data_add_entry'),
-(131, 1, 'mod_data_update_entry'),
-(132, 1, 'mod_feedback_get_feedbacks_by_courses'),
-(133, 1, 'mod_feedback_get_feedback_access_information'),
-(134, 1, 'mod_feedback_view_feedback'),
-(135, 1, 'mod_feedback_get_current_completed_tmp'),
-(136, 1, 'mod_feedback_get_items'),
-(137, 1, 'mod_feedback_launch_feedback'),
-(138, 1, 'mod_feedback_get_page_items'),
-(139, 1, 'mod_feedback_process_page'),
-(140, 1, 'mod_feedback_get_analysis'),
-(141, 1, 'mod_feedback_get_unfinished_responses'),
-(142, 1, 'mod_feedback_get_finished_responses'),
-(143, 1, 'mod_feedback_get_non_respondents'),
-(144, 1, 'mod_feedback_get_responses_analysis'),
-(145, 1, 'mod_feedback_get_last_completed'),
-(146, 1, 'mod_folder_view_folder'),
-(147, 1, 'mod_folder_get_folders_by_courses'),
-(148, 1, 'mod_forum_get_forums_by_courses'),
-(149, 1, 'mod_forum_get_forum_discussion_posts'),
-(150, 1, 'mod_forum_get_forum_discussions_paginated'),
-(151, 1, 'mod_forum_view_forum'),
-(152, 1, 'mod_forum_view_forum_discussion'),
-(153, 1, 'mod_forum_add_discussion_post'),
-(154, 1, 'mod_forum_add_discussion'),
-(155, 1, 'mod_forum_can_add_discussion'),
-(156, 1, 'mod_glossary_get_glossaries_by_courses'),
-(157, 1, 'mod_glossary_view_glossary'),
-(158, 1, 'mod_glossary_view_entry'),
-(159, 1, 'mod_glossary_get_entries_by_letter'),
-(160, 1, 'mod_glossary_get_entries_by_date'),
-(161, 1, 'mod_glossary_get_categories'),
-(162, 1, 'mod_glossary_get_entries_by_category'),
-(163, 1, 'mod_glossary_get_authors'),
-(164, 1, 'mod_glossary_get_entries_by_author'),
-(165, 1, 'mod_glossary_get_entries_by_author_id'),
-(166, 1, 'mod_glossary_get_entries_by_search'),
-(167, 1, 'mod_glossary_get_entries_by_term'),
-(168, 1, 'mod_glossary_get_entries_to_approve'),
-(169, 1, 'mod_glossary_get_entry_by_id'),
-(170, 1, 'mod_glossary_add_entry'),
-(171, 1, 'mod_imscp_view_imscp'),
-(172, 1, 'mod_imscp_get_imscps_by_courses'),
-(173, 1, 'mod_label_get_labels_by_courses'),
-(174, 1, 'mod_lesson_get_lessons_by_courses'),
-(175, 1, 'mod_lesson_get_lesson_access_information'),
-(176, 1, 'mod_lesson_view_lesson'),
-(177, 1, 'mod_lesson_get_questions_attempts'),
-(178, 1, 'mod_lesson_get_user_grade'),
-(179, 1, 'mod_lesson_get_user_attempt_grade'),
-(180, 1, 'mod_lesson_get_content_pages_viewed'),
-(181, 1, 'mod_lesson_get_user_timers'),
-(182, 1, 'mod_lesson_get_pages'),
-(183, 1, 'mod_lesson_launch_attempt'),
-(184, 1, 'mod_lesson_get_page_data'),
-(185, 1, 'mod_lesson_process_page'),
-(186, 1, 'mod_lesson_finish_attempt'),
-(187, 1, 'mod_lesson_get_attempts_overview'),
-(188, 1, 'mod_lesson_get_user_attempt'),
-(189, 1, 'mod_lesson_get_pages_possible_jumps'),
-(190, 1, 'mod_lesson_get_lesson'),
-(191, 1, 'mod_lti_get_tool_launch_data'),
-(192, 1, 'mod_lti_get_ltis_by_courses'),
-(193, 1, 'mod_lti_view_lti'),
-(194, 1, 'mod_page_view_page'),
-(195, 1, 'mod_page_get_pages_by_courses'),
-(196, 1, 'mod_quiz_get_quizzes_by_courses'),
-(197, 1, 'mod_quiz_view_quiz'),
-(198, 1, 'mod_quiz_get_user_attempts'),
-(199, 1, 'mod_quiz_get_user_best_grade'),
-(200, 1, 'mod_quiz_get_combined_review_options'),
-(201, 1, 'mod_quiz_start_attempt'),
-(202, 1, 'mod_quiz_get_attempt_data'),
-(203, 1, 'mod_quiz_get_attempt_summary'),
-(204, 1, 'mod_quiz_save_attempt'),
-(205, 1, 'mod_quiz_process_attempt'),
-(206, 1, 'mod_quiz_get_attempt_review'),
-(207, 1, 'mod_quiz_view_attempt'),
-(208, 1, 'mod_quiz_view_attempt_summary'),
-(209, 1, 'mod_quiz_view_attempt_review'),
-(210, 1, 'mod_quiz_get_quiz_feedback_for_grade'),
-(211, 1, 'mod_quiz_get_quiz_access_information'),
-(212, 1, 'mod_quiz_get_attempt_access_information'),
-(213, 1, 'mod_quiz_get_quiz_required_qtypes'),
-(214, 1, 'mod_resource_view_resource'),
-(215, 1, 'mod_resource_get_resources_by_courses'),
-(216, 1, 'mod_scorm_view_scorm'),
-(217, 1, 'mod_scorm_get_scorm_attempt_count'),
-(218, 1, 'mod_scorm_get_scorm_scoes'),
-(219, 1, 'mod_scorm_get_scorm_user_data'),
-(220, 1, 'mod_scorm_insert_scorm_tracks'),
-(221, 1, 'mod_scorm_get_scorm_sco_tracks'),
-(222, 1, 'mod_scorm_get_scorms_by_courses'),
-(223, 1, 'mod_scorm_launch_sco'),
-(224, 1, 'mod_survey_get_surveys_by_courses'),
-(225, 1, 'mod_survey_view_survey'),
-(226, 1, 'mod_survey_get_questions'),
-(227, 1, 'mod_survey_submit_answers'),
-(228, 1, 'mod_url_view_url'),
-(229, 1, 'mod_url_get_urls_by_courses'),
-(230, 1, 'mod_wiki_get_wikis_by_courses'),
-(231, 1, 'mod_wiki_view_wiki'),
-(232, 1, 'mod_wiki_view_page'),
-(233, 1, 'mod_wiki_get_subwikis'),
-(234, 1, 'mod_wiki_get_subwiki_pages'),
-(235, 1, 'mod_wiki_get_subwiki_files'),
-(236, 1, 'mod_wiki_get_page_contents'),
-(237, 1, 'mod_wiki_get_page_for_editing'),
-(238, 1, 'mod_wiki_new_page'),
-(239, 1, 'mod_wiki_edit_page'),
-(240, 1, 'enrol_guest_get_instance_info'),
-(241, 1, 'enrol_self_get_instance_info'),
-(242, 1, 'enrol_self_enrol_user'),
-(243, 1, 'message_airnotifier_is_system_configured'),
-(244, 1, 'message_airnotifier_are_notification_preferences_configured'),
-(245, 1, 'message_airnotifier_get_user_devices'),
-(246, 1, 'message_airnotifier_enable_device'),
-(247, 1, 'message_popup_get_popup_notifications'),
-(248, 1, 'message_popup_get_unread_popup_notification_count'),
-(249, 1, 'gradereport_overview_get_course_grades'),
-(250, 1, 'gradereport_overview_view_grade_report'),
-(251, 1, 'gradereport_user_get_grades_table'),
-(252, 1, 'gradereport_user_view_grade_report'),
-(253, 1, 'gradereport_user_get_grade_items'),
-(254, 1, 'tool_lp_data_for_course_competencies_page'),
-(255, 1, 'tool_lp_data_for_plans_page'),
-(256, 1, 'tool_lp_data_for_plan_page'),
-(257, 1, 'tool_lp_data_for_user_evidence_list_page'),
-(258, 1, 'tool_lp_data_for_user_evidence_page'),
-(259, 1, 'tool_lp_data_for_user_competency_summary'),
-(260, 1, 'tool_lp_data_for_user_competency_summary_in_plan'),
-(261, 1, 'tool_lp_data_for_user_competency_summary_in_course'),
-(262, 1, 'tool_mobile_get_plugins_supporting_mobile'),
-(263, 1, 'tool_mobile_get_public_config'),
-(264, 1, 'tool_mobile_get_config'),
-(265, 1, 'tool_mobile_get_autologin_key');
+(266, 1, 'core_badges_get_user_badges'),
+(267, 1, 'core_calendar_create_calendar_events'),
+(268, 1, 'core_calendar_delete_calendar_events'),
+(269, 1, 'core_calendar_get_calendar_events'),
+(270, 1, 'core_calendar_get_action_events_by_timesort'),
+(271, 1, 'core_calendar_get_action_events_by_course'),
+(272, 1, 'core_calendar_get_action_events_by_courses'),
+(273, 1, 'core_comment_get_comments'),
+(274, 1, 'core_completion_get_activities_completion_status'),
+(275, 1, 'core_completion_get_course_completion_status'),
+(276, 1, 'core_completion_mark_course_self_completed'),
+(277, 1, 'core_completion_update_activity_completion_status_manually'),
+(278, 1, 'core_course_get_categories'),
+(279, 1, 'core_course_get_contents'),
+(280, 1, 'core_course_get_course_module'),
+(281, 1, 'core_course_get_course_module_by_instance'),
+(282, 1, 'core_course_get_courses'),
+(283, 1, 'core_course_search_courses'),
+(284, 1, 'core_course_view_course'),
+(285, 1, 'core_course_get_activities_overview'),
+(286, 1, 'core_course_get_user_navigation_options'),
+(287, 1, 'core_course_get_user_administration_options'),
+(288, 1, 'core_course_get_courses_by_field'),
+(289, 1, 'core_course_check_updates'),
+(290, 1, 'core_course_get_updates_since'),
+(291, 1, 'core_enrol_get_course_enrolment_methods'),
+(292, 1, 'core_enrol_get_enrolled_users'),
+(293, 1, 'core_enrol_get_users_courses'),
+(294, 1, 'core_files_get_files'),
+(295, 1, 'core_get_component_strings'),
+(296, 1, 'core_group_get_activity_allowed_groups'),
+(297, 1, 'core_group_get_activity_groupmode'),
+(298, 1, 'core_group_get_course_user_groups'),
+(299, 1, 'core_message_block_contacts'),
+(300, 1, 'core_message_create_contacts'),
+(301, 1, 'core_message_delete_contacts'),
+(302, 1, 'core_message_delete_conversation'),
+(303, 1, 'core_message_delete_message'),
+(304, 1, 'core_message_get_blocked_users'),
+(305, 1, 'core_message_data_for_messagearea_search_messages'),
+(306, 1, 'core_message_data_for_messagearea_conversations'),
+(307, 1, 'core_message_data_for_messagearea_contacts'),
+(308, 1, 'core_message_data_for_messagearea_messages'),
+(309, 1, 'core_message_get_contacts'),
+(310, 1, 'core_message_get_messages'),
+(311, 1, 'core_message_get_unread_conversations_count'),
+(312, 1, 'core_message_mark_all_notifications_as_read'),
+(313, 1, 'core_message_mark_all_messages_as_read'),
+(314, 1, 'core_message_mark_message_read'),
+(315, 1, 'core_message_message_processor_config_form'),
+(316, 1, 'core_message_search_contacts'),
+(317, 1, 'core_message_send_instant_messages'),
+(318, 1, 'core_message_unblock_contacts'),
+(319, 1, 'core_message_get_user_notification_preferences'),
+(320, 1, 'core_message_get_user_message_preferences'),
+(321, 1, 'core_notes_create_notes'),
+(322, 1, 'core_notes_delete_notes'),
+(323, 1, 'core_notes_get_course_notes'),
+(324, 1, 'core_notes_view_notes'),
+(325, 1, 'core_question_update_flag'),
+(326, 1, 'core_rating_get_item_ratings'),
+(327, 1, 'core_rating_add_rating'),
+(328, 1, 'core_user_add_user_device'),
+(329, 1, 'core_user_add_user_private_files'),
+(330, 1, 'core_user_get_course_user_profiles'),
+(331, 1, 'core_user_get_users_by_field'),
+(332, 1, 'core_user_remove_user_device'),
+(333, 1, 'core_user_update_user_preferences'),
+(334, 1, 'core_user_view_user_list'),
+(335, 1, 'core_user_view_user_profile'),
+(336, 1, 'core_user_get_user_preferences'),
+(337, 1, 'core_user_update_picture'),
+(338, 1, 'core_user_agree_site_policy'),
+(339, 1, 'core_competency_competency_viewed'),
+(340, 1, 'core_competency_list_course_competencies'),
+(341, 1, 'core_competency_get_scale_values'),
+(342, 1, 'core_competency_user_competency_viewed'),
+(343, 1, 'core_competency_user_competency_viewed_in_plan'),
+(344, 1, 'core_competency_user_competency_viewed_in_course'),
+(345, 1, 'core_competency_user_competency_plan_viewed'),
+(346, 1, 'core_competency_grade_competency_in_course'),
+(347, 1, 'core_competency_delete_evidence'),
+(348, 1, 'core_webservice_get_site_info'),
+(349, 1, 'core_block_get_course_blocks'),
+(350, 1, 'mod_assign_get_grades'),
+(351, 1, 'mod_assign_get_assignments'),
+(352, 1, 'mod_assign_get_submissions'),
+(353, 1, 'mod_assign_get_user_flags'),
+(354, 1, 'mod_assign_set_user_flags'),
+(355, 1, 'mod_assign_get_user_mappings'),
+(356, 1, 'mod_assign_revert_submissions_to_draft'),
+(357, 1, 'mod_assign_lock_submissions'),
+(358, 1, 'mod_assign_unlock_submissions'),
+(359, 1, 'mod_assign_save_submission'),
+(360, 1, 'mod_assign_submit_for_grading'),
+(361, 1, 'mod_assign_save_grade'),
+(362, 1, 'mod_assign_save_grades'),
+(363, 1, 'mod_assign_save_user_extensions'),
+(364, 1, 'mod_assign_reveal_identities'),
+(365, 1, 'mod_assign_view_grading_table'),
+(366, 1, 'mod_assign_view_submission_status'),
+(367, 1, 'mod_assign_get_submission_status'),
+(368, 1, 'mod_assign_list_participants'),
+(369, 1, 'mod_assign_submit_grading_form'),
+(370, 1, 'mod_assign_get_participant'),
+(371, 1, 'mod_assign_view_assign'),
+(372, 1, 'mod_book_view_book'),
+(373, 1, 'mod_book_get_books_by_courses'),
+(374, 1, 'mod_chat_login_user'),
+(375, 1, 'mod_chat_get_chat_users'),
+(376, 1, 'mod_chat_send_chat_message'),
+(377, 1, 'mod_chat_get_chat_latest_messages'),
+(378, 1, 'mod_chat_view_chat'),
+(379, 1, 'mod_chat_get_chats_by_courses'),
+(380, 1, 'mod_choice_get_choice_results'),
+(381, 1, 'mod_choice_get_choice_options'),
+(382, 1, 'mod_choice_submit_choice_response'),
+(383, 1, 'mod_choice_view_choice'),
+(384, 1, 'mod_choice_get_choices_by_courses'),
+(385, 1, 'mod_choice_delete_choice_responses'),
+(386, 1, 'mod_data_get_databases_by_courses'),
+(387, 1, 'mod_data_view_database'),
+(388, 1, 'mod_data_get_data_access_information'),
+(389, 1, 'mod_data_get_entries'),
+(390, 1, 'mod_data_get_entry'),
+(391, 1, 'mod_data_get_fields'),
+(392, 1, 'mod_data_search_entries'),
+(393, 1, 'mod_data_approve_entry'),
+(394, 1, 'mod_data_delete_entry'),
+(395, 1, 'mod_data_add_entry'),
+(396, 1, 'mod_data_update_entry'),
+(397, 1, 'mod_feedback_get_feedbacks_by_courses'),
+(398, 1, 'mod_feedback_get_feedback_access_information'),
+(399, 1, 'mod_feedback_view_feedback'),
+(400, 1, 'mod_feedback_get_current_completed_tmp'),
+(401, 1, 'mod_feedback_get_items'),
+(402, 1, 'mod_feedback_launch_feedback'),
+(403, 1, 'mod_feedback_get_page_items'),
+(404, 1, 'mod_feedback_process_page'),
+(405, 1, 'mod_feedback_get_analysis'),
+(406, 1, 'mod_feedback_get_unfinished_responses'),
+(407, 1, 'mod_feedback_get_finished_responses'),
+(408, 1, 'mod_feedback_get_non_respondents'),
+(409, 1, 'mod_feedback_get_responses_analysis'),
+(410, 1, 'mod_feedback_get_last_completed'),
+(411, 1, 'mod_folder_view_folder'),
+(412, 1, 'mod_folder_get_folders_by_courses'),
+(413, 1, 'mod_forum_get_forums_by_courses'),
+(414, 1, 'mod_forum_get_forum_discussion_posts'),
+(415, 1, 'mod_forum_get_forum_discussions_paginated'),
+(416, 1, 'mod_forum_view_forum'),
+(417, 1, 'mod_forum_view_forum_discussion'),
+(418, 1, 'mod_forum_add_discussion_post'),
+(419, 1, 'mod_forum_add_discussion'),
+(420, 1, 'mod_forum_can_add_discussion'),
+(421, 1, 'mod_glossary_get_glossaries_by_courses'),
+(422, 1, 'mod_glossary_view_glossary'),
+(423, 1, 'mod_glossary_view_entry'),
+(424, 1, 'mod_glossary_get_entries_by_letter'),
+(425, 1, 'mod_glossary_get_entries_by_date'),
+(426, 1, 'mod_glossary_get_categories'),
+(427, 1, 'mod_glossary_get_entries_by_category'),
+(428, 1, 'mod_glossary_get_authors'),
+(429, 1, 'mod_glossary_get_entries_by_author'),
+(430, 1, 'mod_glossary_get_entries_by_author_id'),
+(431, 1, 'mod_glossary_get_entries_by_search'),
+(432, 1, 'mod_glossary_get_entries_by_term'),
+(433, 1, 'mod_glossary_get_entries_to_approve'),
+(434, 1, 'mod_glossary_get_entry_by_id'),
+(435, 1, 'mod_glossary_add_entry'),
+(436, 1, 'mod_imscp_view_imscp'),
+(437, 1, 'mod_imscp_get_imscps_by_courses'),
+(438, 1, 'mod_label_get_labels_by_courses'),
+(439, 1, 'mod_lesson_get_lessons_by_courses'),
+(440, 1, 'mod_lesson_get_lesson_access_information'),
+(441, 1, 'mod_lesson_view_lesson'),
+(442, 1, 'mod_lesson_get_questions_attempts'),
+(443, 1, 'mod_lesson_get_user_grade'),
+(444, 1, 'mod_lesson_get_user_attempt_grade'),
+(445, 1, 'mod_lesson_get_content_pages_viewed'),
+(446, 1, 'mod_lesson_get_user_timers'),
+(447, 1, 'mod_lesson_get_pages'),
+(448, 1, 'mod_lesson_launch_attempt'),
+(449, 1, 'mod_lesson_get_page_data'),
+(450, 1, 'mod_lesson_process_page'),
+(451, 1, 'mod_lesson_finish_attempt'),
+(452, 1, 'mod_lesson_get_attempts_overview'),
+(453, 1, 'mod_lesson_get_user_attempt'),
+(454, 1, 'mod_lesson_get_pages_possible_jumps'),
+(455, 1, 'mod_lesson_get_lesson'),
+(456, 1, 'mod_lti_get_tool_launch_data'),
+(457, 1, 'mod_lti_get_ltis_by_courses'),
+(458, 1, 'mod_lti_view_lti'),
+(459, 1, 'mod_page_view_page'),
+(460, 1, 'mod_page_get_pages_by_courses'),
+(461, 1, 'mod_quiz_get_quizzes_by_courses'),
+(462, 1, 'mod_quiz_view_quiz'),
+(463, 1, 'mod_quiz_get_user_attempts'),
+(464, 1, 'mod_quiz_get_user_best_grade'),
+(465, 1, 'mod_quiz_get_combined_review_options'),
+(466, 1, 'mod_quiz_start_attempt'),
+(467, 1, 'mod_quiz_get_attempt_data'),
+(468, 1, 'mod_quiz_get_attempt_summary'),
+(469, 1, 'mod_quiz_save_attempt'),
+(470, 1, 'mod_quiz_process_attempt'),
+(471, 1, 'mod_quiz_get_attempt_review'),
+(472, 1, 'mod_quiz_view_attempt'),
+(473, 1, 'mod_quiz_view_attempt_summary'),
+(474, 1, 'mod_quiz_view_attempt_review'),
+(475, 1, 'mod_quiz_get_quiz_feedback_for_grade'),
+(476, 1, 'mod_quiz_get_quiz_access_information'),
+(477, 1, 'mod_quiz_get_attempt_access_information'),
+(478, 1, 'mod_quiz_get_quiz_required_qtypes'),
+(479, 1, 'mod_resource_view_resource'),
+(480, 1, 'mod_resource_get_resources_by_courses'),
+(481, 1, 'mod_scorm_view_scorm'),
+(482, 1, 'mod_scorm_get_scorm_attempt_count'),
+(483, 1, 'mod_scorm_get_scorm_scoes'),
+(484, 1, 'mod_scorm_get_scorm_user_data'),
+(485, 1, 'mod_scorm_insert_scorm_tracks'),
+(486, 1, 'mod_scorm_get_scorm_sco_tracks'),
+(487, 1, 'mod_scorm_get_scorms_by_courses'),
+(488, 1, 'mod_scorm_launch_sco'),
+(489, 1, 'mod_survey_get_surveys_by_courses'),
+(490, 1, 'mod_survey_view_survey'),
+(491, 1, 'mod_survey_get_questions'),
+(492, 1, 'mod_survey_submit_answers'),
+(493, 1, 'mod_url_view_url'),
+(494, 1, 'mod_url_get_urls_by_courses'),
+(495, 1, 'mod_wiki_get_wikis_by_courses'),
+(496, 1, 'mod_wiki_view_wiki'),
+(497, 1, 'mod_wiki_view_page'),
+(498, 1, 'mod_wiki_get_subwikis'),
+(499, 1, 'mod_wiki_get_subwiki_pages'),
+(500, 1, 'mod_wiki_get_subwiki_files'),
+(501, 1, 'mod_wiki_get_page_contents'),
+(502, 1, 'mod_wiki_get_page_for_editing'),
+(503, 1, 'mod_wiki_new_page'),
+(504, 1, 'mod_wiki_edit_page'),
+(505, 1, 'enrol_guest_get_instance_info'),
+(506, 1, 'enrol_self_get_instance_info'),
+(507, 1, 'enrol_self_enrol_user'),
+(508, 1, 'message_airnotifier_is_system_configured'),
+(509, 1, 'message_airnotifier_are_notification_preferences_configured'),
+(510, 1, 'message_airnotifier_get_user_devices'),
+(511, 1, 'message_airnotifier_enable_device'),
+(512, 1, 'message_popup_get_popup_notifications'),
+(513, 1, 'message_popup_get_unread_popup_notification_count'),
+(514, 1, 'gradereport_overview_get_course_grades'),
+(515, 1, 'gradereport_overview_view_grade_report'),
+(516, 1, 'gradereport_user_get_grades_table'),
+(517, 1, 'gradereport_user_view_grade_report'),
+(518, 1, 'gradereport_user_get_grade_items'),
+(519, 1, 'tool_lp_data_for_course_competencies_page'),
+(520, 1, 'tool_lp_data_for_plans_page'),
+(521, 1, 'tool_lp_data_for_plan_page'),
+(522, 1, 'tool_lp_data_for_user_evidence_list_page'),
+(523, 1, 'tool_lp_data_for_user_evidence_page'),
+(524, 1, 'tool_lp_data_for_user_competency_summary'),
+(525, 1, 'tool_lp_data_for_user_competency_summary_in_plan'),
+(526, 1, 'tool_lp_data_for_user_competency_summary_in_course'),
+(527, 1, 'tool_mobile_get_plugins_supporting_mobile'),
+(528, 1, 'tool_mobile_get_public_config'),
+(529, 1, 'tool_mobile_get_config'),
+(530, 1, 'tool_mobile_get_autologin_key');
 
 -- --------------------------------------------------------
 
@@ -8886,7 +8887,11 @@ INSERT INTO `mdl_logstore_standard_log` (`id`, `eventname`, `component`, `action
 (35, '\\mod_lti\\event\\course_module_viewed', 'mod_lti', 'viewed', 'course_module', 'lti', 1, 'r', 2, 22, 70, 1, 2, 2, NULL, 0, 'N;', 1507735230, 'web', '172.22.0.1', NULL),
 (36, '\\core\\event\\dashboard_viewed', 'core', 'viewed', 'dashboard', NULL, NULL, 'r', 0, 5, 30, 2, 2, 0, 2, 0, 'N;', 1507735259, 'web', '172.22.0.1', NULL),
 (37, '\\core\\event\\dashboard_viewed', 'core', 'viewed', 'dashboard', NULL, NULL, 'r', 0, 5, 30, 2, 2, 0, 2, 0, 'N;', 1507735506, 'web', '172.22.0.1', NULL),
-(38, '\\mod_lti\\event\\course_module_viewed', 'mod_lti', 'viewed', 'course_module', 'lti', 1, 'r', 2, 22, 70, 1, 2, 2, NULL, 0, 'N;', 1507735509, 'web', '172.22.0.1', NULL);
+(38, '\\mod_lti\\event\\course_module_viewed', 'mod_lti', 'viewed', 'course_module', 'lti', 1, 'r', 2, 22, 70, 1, 2, 2, NULL, 0, 'N;', 1507735509, 'web', '172.22.0.1', NULL),
+(39, '\\core\\event\\course_viewed', 'core', 'viewed', 'course', NULL, NULL, 'r', 2, 2, 50, 1, 0, 1, NULL, 0, 'N;', 1508319985, 'web', '172.22.0.1', NULL),
+(40, '\\core\\event\\user_loggedin', 'core', 'loggedin', 'user', 'user', 2, 'r', 0, 1, 10, 0, 2, 0, NULL, 0, 'a:1:{s:8:\"username\";s:5:\"admin\";}', 1508320119, 'web', '172.22.0.1', NULL),
+(41, '\\mod_lti\\event\\course_module_viewed', 'mod_lti', 'viewed', 'course_module', 'lti', 1, 'r', 2, 22, 70, 1, 2, 2, NULL, 0, 'N;', 1508320472, 'web', '172.22.0.1', NULL),
+(42, '\\mod_lti\\event\\course_module_viewed', 'mod_lti', 'viewed', 'course_module', 'lti', 1, 'r', 2, 22, 70, 1, 2, 2, NULL, 0, 'N;', 1508320581, 'web', '172.22.0.1', NULL);
 
 -- --------------------------------------------------------
 
@@ -9203,7 +9208,7 @@ CREATE TABLE `mdl_lti_tool_proxies` (
 --
 
 INSERT INTO `mdl_lti_tool_proxies` (`id`, `name`, `regurl`, `state`, `guid`, `secret`, `vendorcode`, `capabilityoffered`, `serviceoffered`, `toolproxy`, `createdby`, `timecreated`, `timemodified`) VALUES
-(1, 'Tool Provider', CONCAT('https://',@domain,'/app_dev.php/lti/moodle-dev/connect/b5475433f967a1bf'), 3, 'u649RW41HQCRSB0', '2cf8d313c3', 'steamboat.youseeu.com', 'basic-lti-launch-request\nContentItemSelectionRequest\nToolProxyRegistrationRequest\nContext.id\nContext.title\nContext.label\nContext.sourcedId\nContext.longDescription\nContext.timeFrame.begin\nCourseSection.title\nCourseSection.label\nCourseSection.sourcedId\nCourseSection.longDescription\nCourseSection.timeFrame.begin\nResourceLink.id\nResourceLink.title\nResourceLink.description\nUser.id\nUser.username\nPerson.name.full\nPerson.name.given\nPerson.name.family\nPerson.email.primary\nPerson.sourcedId\nPerson.name.middle\nPerson.address.street1\nPerson.address.locality\nPerson.address.country\nPerson.address.timezone\nPerson.phone.primary\nPerson.phone.mobile\nPerson.webaddress\nMembership.role\nResult.sourcedId\nResult.autocreate', 'memberships\nprofile\ntoolproxy\ntoolsettings', '{\n    \"@context\": \"http:\\/\\/purl.imsglobal.org\\/ctx\\/lti\\/v2\\/ToolProxy\",\n    \"@type\": \"ToolProxy\",\n    \"lti_version\": \"LTI-2p0\",\n    \"tool_profile\": {\n        \"product_instance\": {\n            \"guid\": \"www.youseeu.com\",\n            \"product_info\": {\n                \"product_name\": {\n                    \"default_value\": \"YouSeeU\"\n                },\n                \"product_version\": \"3.2\",\n                \"description\": {\n                    \"default_value\": \"YouSeU 3.2\"\n                },\n                \"product_family\": {\n                    \"@id\": \"www.youseeu.com\",\n                    \"code\": \"YSU\",\n                    \"vendor\": {\n                        \"code\": \"steamboat.youseeu.com\",\n                        \"timestamp\": \"2017-10-11T14:30:42+00:00\",\n                        \"vendor_name\": {\n                            \"default_value\": \"YouSeeU 3.2\"\n                        },\n                        \"description\": {\n                            \"default_value\": \"Student Centric Video Assignment Platform\"\n                        },\n                        \"website\": \"http:\\/\\/www.youseeu.com\\/about\\/\",\n                        \"contact\": {\n                            \"email\": \"support@youseeu.com\"\n                        }\n                    }\n                }\n            }\n        },\n        \"message\": {\n            \"message_type\": [\n                \"ToolProxyRegistrationRequest\",\n                \"ToolProxyReregistrationRequest\"\n            ],\n            \"path\": \"registration_path\",\n            \"parameter\": {\n                \"variable\": \"ToolConsumerProfile.url\",\n                \"name\": \"tc_profile_url\"\n            }\n        },\n        \"resource_handler\": [\n            {\n                \"resource_type\": {\n                    \"code\": \"basic-lti-launch-request\"\n                },\n                \"message\": [\n                    {\n                        \"message_type\": \"basic-lti-launch-request\",\n                        \"path\": \"\\/app_dev.php\\/lti\\/moodle-dev\\/connect\",\n                        \"parameter\": [\n                            {\n                                \"variable\": \"ToolProxy.custom.url\",\n                                \"name\": \"system_setting_url\"\n                            },\n                            {\n                                \"variable\": \"ToolProxyBinding.custom.url\",\n                                \"name\": \"context_setting_url\"\n                            },\n                            {\n                                \"variable\": \"LtiLink.custom.url\",\n                                \"name\": \"link_setting_url\"\n                            },\n                            {\n                                \"variable\": \"ToolProxyBinding.memberships.url\",\n                                \"name\": \"context_memberships_url\"\n                            },\n                            {\n                                \"variable\": \"LtiLink.memberships.url\",\n                                \"name\": \"link_memberships_url\"\n                            }\n                        ],\n                        \"enabled_capability\": [\n                            \"Context.id\",\n                            \"CourseSection.sourcedId\",\n                            \"Person.email.primary\",\n                            \"Person.name.given\",\n                            \"Person.name.family\",\n                            \"Person.name.full\",\n                            \"Person.sourcedId\",\n                            \"User.id\",\n                            \"Membership.role\",\n                            \"Result.autocreate\",\n                            \"Result.sourcedId\",\n                            \"ToolProxy.custom.url\",\n                            \"ToolProxyBinding.custom.url\",\n                            \"LtiLink.custom.url\",\n                            \"ToolProxyBinding.memberships.url\",\n                            \"LtiLink.memberships.url\"\n                        ]\n                    }\n                ],\n                \"resource_name\": {\n                    \"default_value\": \"YouSeeU\",\n                    \"key\": \"resource.name\"\n                },\n                \"description\": {\n                    \"default_value\": \"YouSeeU\",\n                    \"key\": \"resource.description\"\n                }\n            },\n            {\n                \"resource_type\": {\n                    \"code\": \"ContentItemSelectionRequest\"\n                },\n                \"message\": [\n                    {\n                        \"message_type\": \"ContentItemSelectionRequest\",\n                        \"path\": \"\\/app_dev.php\\/lti\\/moodle-dev\\/connect\",\n                        \"parameter\": [],\n                        \"enabled_capability\": []\n                    }\n                ],\n                \"resource_name\": {\n                    \"default_value\": \"YouSeeU\",\n                    \"key\": \"resource.name\"\n                },\n                \"description\": {\n                    \"default_value\": \"YouSeeU\",\n                    \"key\": \"resource.description\"\n                }\n            }\n        ],\n        \"base_url_choice\": [\n            {\n                \"default_base_url\": \"https:\\/\\/loc-belous.cs-dev.youseeu.com\"\n            }\n        ]\n    },\n    \"security_contract\": {\n        \"shared_secret\": \"f71f89470e\",\n        \"tool_service\": [\n            {\n                \"@type\": \"RestService\",\n                \"service\": \"https:\\/\\/moodle.loc:444\\/mod\\/lti\\/services.php\\/profile\\/HcO0HIYn3cK2Nnh#ToolProxyBindingMemberships\",\n                \"action\": [\n                    \"GET\"\n                ]\n            },\n            {\n                \"@type\": \"RestService\",\n                \"service\": \"https:\\/\\/moodle.loc:444\\/mod\\/lti\\/services.php\\/profile\\/HcO0HIYn3cK2Nnh#LtiLinkMemberships\",\n                \"action\": [\n                    \"GET\"\n                ]\n            },\n            {\n                \"@type\": \"RestService\",\n                \"service\": \"https:\\/\\/moodle.loc:444\\/mod\\/lti\\/services.php\\/profile\\/HcO0HIYn3cK2Nnh#ToolConsumerProfile\",\n                \"action\": [\n                    \"GET\"\n                ]\n            },\n            {\n                \"@type\": \"RestService\",\n                \"service\": \"https:\\/\\/moodle.loc:444\\/mod\\/lti\\/services.php\\/profile\\/HcO0HIYn3cK2Nnh#ToolProxy.collection\",\n                \"action\": [\n                    \"POST\"\n                ]\n            },\n            {\n                \"@type\": \"RestService\",\n                \"service\": \"https:\\/\\/moodle.loc:444\\/mod\\/lti\\/services.php\\/profile\\/HcO0HIYn3cK2Nnh#ToolProxySettings\",\n                \"action\": [\n                    \"GET\",\n                    \"PUT\"\n                ]\n            },\n            {\n                \"@type\": \"RestService\",\n                \"service\": \"https:\\/\\/moodle.loc:444\\/mod\\/lti\\/services.php\\/profile\\/HcO0HIYn3cK2Nnh#ToolProxyBindingSettings\",\n                \"action\": [\n                    \"GET\",\n                    \"PUT\"\n                ]\n            },\n            {\n                \"@type\": \"RestService\",\n                \"service\": \"https:\\/\\/moodle.loc:444\\/mod\\/lti\\/services.php\\/profile\\/HcO0HIYn3cK2Nnh#LtiLinkSettings\",\n                \"action\": [\n                    \"GET\",\n                    \"PUT\"\n                ]\n            }\n        ]\n    }\n}', 2, 1507732242, 1507732242);
+(1, 'Tool Provider','https://${YSU_HOST}/app_dev.php/lti/moodle-dev/connect/b5475433f967a1bf', 3, 'u649RW41HQCRSB0', '2cf8d313c3', 'steamboat.youseeu.com', 'basic-lti-launch-request\nContentItemSelectionRequest\nToolProxyRegistrationRequest\nContext.id\nContext.title\nContext.label\nContext.sourcedId\nContext.longDescription\nContext.timeFrame.begin\nCourseSection.title\nCourseSection.label\nCourseSection.sourcedId\nCourseSection.longDescription\nCourseSection.timeFrame.begin\nResourceLink.id\nResourceLink.title\nResourceLink.description\nUser.id\nUser.username\nPerson.name.full\nPerson.name.given\nPerson.name.family\nPerson.email.primary\nPerson.sourcedId\nPerson.name.middle\nPerson.address.street1\nPerson.address.locality\nPerson.address.country\nPerson.address.timezone\nPerson.phone.primary\nPerson.phone.mobile\nPerson.webaddress\nMembership.role\nResult.sourcedId\nResult.autocreate', 'memberships\nprofile\ntoolproxy\ntoolsettings', '{\n    \"@context\": \"http:\\/\\/purl.imsglobal.org\\/ctx\\/lti\\/v2\\/ToolProxy\",\n    \"@type\": \"ToolProxy\",\n    \"lti_version\": \"LTI-2p0\",\n    \"tool_profile\": {\n        \"product_instance\": {\n            \"guid\": \"www.youseeu.com\",\n            \"product_info\": {\n                \"product_name\": {\n                    \"default_value\": \"YouSeeU\"\n                },\n                \"product_version\": \"3.2\",\n                \"description\": {\n                    \"default_value\": \"YouSeU 3.2\"\n                },\n                \"product_family\": {\n                    \"@id\": \"www.youseeu.com\",\n                    \"code\": \"YSU\",\n                    \"vendor\": {\n                        \"code\": \"steamboat.youseeu.com\",\n                        \"timestamp\": \"2017-10-11T14:30:42+00:00\",\n                        \"vendor_name\": {\n                            \"default_value\": \"YouSeeU 3.2\"\n                        },\n                        \"description\": {\n                            \"default_value\": \"Student Centric Video Assignment Platform\"\n                        },\n                        \"website\": \"http:\\/\\/www.youseeu.com\\/about\\/\",\n                        \"contact\": {\n                            \"email\": \"support@youseeu.com\"\n                        }\n                    }\n                }\n            }\n        },\n        \"message\": {\n            \"message_type\": [\n                \"ToolProxyRegistrationRequest\",\n                \"ToolProxyReregistrationRequest\"\n            ],\n            \"path\": \"registration_path\",\n            \"parameter\": {\n                \"variable\": \"ToolConsumerProfile.url\",\n                \"name\": \"tc_profile_url\"\n            }\n        },\n        \"resource_handler\": [\n            {\n                \"resource_type\": {\n                    \"code\": \"basic-lti-launch-request\"\n                },\n                \"message\": [\n                    {\n                        \"message_type\": \"basic-lti-launch-request\",\n                        \"path\": \"\\/app_dev.php\\/lti\\/moodle-dev\\/connect\",\n                        \"parameter\": [\n                            {\n                                \"variable\": \"ToolProxy.custom.url\",\n                                \"name\": \"system_setting_url\"\n                            },\n                            {\n                                \"variable\": \"ToolProxyBinding.custom.url\",\n                                \"name\": \"context_setting_url\"\n                            },\n                            {\n                                \"variable\": \"LtiLink.custom.url\",\n                                \"name\": \"link_setting_url\"\n                            },\n                            {\n                                \"variable\": \"ToolProxyBinding.memberships.url\",\n                                \"name\": \"context_memberships_url\"\n                            },\n                            {\n                                \"variable\": \"LtiLink.memberships.url\",\n                                \"name\": \"link_memberships_url\"\n                            }\n                        ],\n                        \"enabled_capability\": [\n                            \"Context.id\",\n                            \"CourseSection.sourcedId\",\n                            \"Person.email.primary\",\n                            \"Person.name.given\",\n                            \"Person.name.family\",\n                            \"Person.name.full\",\n                            \"Person.sourcedId\",\n                            \"User.id\",\n                            \"Membership.role\",\n                            \"Result.autocreate\",\n                            \"Result.sourcedId\",\n                            \"ToolProxy.custom.url\",\n                            \"ToolProxyBinding.custom.url\",\n                            \"LtiLink.custom.url\",\n                            \"ToolProxyBinding.memberships.url\",\n                            \"LtiLink.memberships.url\"\n                        ]\n                    }\n                ],\n                \"resource_name\": {\n                    \"default_value\": \"YouSeeU\",\n                    \"key\": \"resource.name\"\n                },\n                \"description\": {\n                    \"default_value\": \"YouSeeU\",\n                    \"key\": \"resource.description\"\n                }\n            },\n            {\n                \"resource_type\": {\n                    \"code\": \"ContentItemSelectionRequest\"\n                },\n                \"message\": [\n                    {\n                        \"message_type\": \"ContentItemSelectionRequest\",\n                        \"path\": \"\\/app_dev.php\\/lti\\/moodle-dev\\/connect\",\n                        \"parameter\": [],\n                        \"enabled_capability\": []\n                    }\n                ],\n                \"resource_name\": {\n                    \"default_value\": \"YouSeeU\",\n                    \"key\": \"resource.name\"\n                },\n                \"description\": {\n                    \"default_value\": \"YouSeeU\",\n                    \"key\": \"resource.description\"\n                }\n            }\n        ],\n        \"base_url_choice\": [\n            {\n                \"default_base_url\": \"https:\\/\\/${YSU_HOST}\"\n            }\n        ]\n    },\n    \"security_contract\": {\n        \"shared_secret\": \"f71f89470e\",\n        \"tool_service\": [\n            {\n                \"@type\": \"RestService\",\n                \"service\": \"https:\\/\\/moodle.loc:444\\/mod\\/lti\\/services.php\\/profile\\/HcO0HIYn3cK2Nnh#ToolProxyBindingMemberships\",\n                \"action\": [\n                    \"GET\"\n                ]\n            },\n            {\n                \"@type\": \"RestService\",\n                \"service\": \"https:\\/\\/moodle.loc:444\\/mod\\/lti\\/services.php\\/profile\\/HcO0HIYn3cK2Nnh#LtiLinkMemberships\",\n                \"action\": [\n                    \"GET\"\n                ]\n            },\n            {\n                \"@type\": \"RestService\",\n                \"service\": \"https:\\/\\/moodle.loc:444\\/mod\\/lti\\/services.php\\/profile\\/HcO0HIYn3cK2Nnh#ToolConsumerProfile\",\n                \"action\": [\n                    \"GET\"\n                ]\n            },\n            {\n                \"@type\": \"RestService\",\n                \"service\": \"https:\\/\\/moodle.loc:444\\/mod\\/lti\\/services.php\\/profile\\/HcO0HIYn3cK2Nnh#ToolProxy.collection\",\n                \"action\": [\n                    \"POST\"\n                ]\n            },\n            {\n                \"@type\": \"RestService\",\n                \"service\": \"https:\\/\\/moodle.loc:444\\/mod\\/lti\\/services.php\\/profile\\/HcO0HIYn3cK2Nnh#ToolProxySettings\",\n                \"action\": [\n                    \"GET\",\n                    \"PUT\"\n                ]\n            },\n            {\n                \"@type\": \"RestService\",\n                \"service\": \"https:\\/\\/moodle.loc:444\\/mod\\/lti\\/services.php\\/profile\\/HcO0HIYn3cK2Nnh#ToolProxyBindingSettings\",\n                \"action\": [\n                    \"GET\",\n                    \"PUT\"\n                ]\n            },\n            {\n                \"@type\": \"RestService\",\n                \"service\": \"https:\\/\\/moodle.loc:444\\/mod\\/lti\\/services.php\\/profile\\/HcO0HIYn3cK2Nnh#LtiLinkSettings\",\n                \"action\": [\n                    \"GET\",\n                    \"PUT\"\n                ]\n            }\n        ]\n    }\n}', 2, 1507732242, 1507732242);
 
 -- --------------------------------------------------------
 
@@ -9251,7 +9256,7 @@ CREATE TABLE `mdl_lti_types` (
 --
 
 INSERT INTO `mdl_lti_types` (`id`, `name`, `baseurl`, `tooldomain`, `state`, `course`, `coursevisible`, `toolproxyid`, `enabledcapability`, `parameter`, `icon`, `secureicon`, `createdby`, `timecreated`, `timemodified`, `description`) VALUES
-(1, 'YouSeeU', CONCAT('https://',@domain,'/app_dev.php/lti/moodle-dev/connect'), CONCAT(@domain,''), 1, 1, 1, 1, 'Context.id\nCourseSection.sourcedId\nPerson.email.primary\nPerson.name.given\nPerson.name.family\nPerson.name.full\nPerson.sourcedId\nUser.id\nMembership.role\nResult.autocreate\nResult.sourcedId\nToolProxy.custom.url\nToolProxyBinding.custom.url\nLtiLink.custom.url\nToolProxyBinding.memberships.url\nLtiLink.memberships.url', 'system_setting_url=$ToolProxy.custom.url\ncontext_setting_url=$ToolProxyBinding.custom.url\nlink_setting_url=$LtiLink.custom.url\ncontext_memberships_url=$ToolProxyBinding.memberships.url\nlink_memberships_url=$LtiLink.memberships.url', NULL, NULL, 0, 1507732242, 1507732294, NULL);
+(1, 'YouSeeU', 'https://${YSU_HOST}/app_dev.php/lti/moodle-dev/connect', '${YSU_HOST}', 1, 1, 1, 1, 'Context.id\nCourseSection.sourcedId\nPerson.email.primary\nPerson.name.given\nPerson.name.family\nPerson.name.full\nPerson.sourcedId\nUser.id\nMembership.role\nResult.autocreate\nResult.sourcedId\nToolProxy.custom.url\nToolProxyBinding.custom.url\nLtiLink.custom.url\nToolProxyBinding.memberships.url\nLtiLink.memberships.url', 'system_setting_url=$ToolProxy.custom.url\ncontext_setting_url=$ToolProxyBinding.custom.url\nlink_setting_url=$LtiLink.custom.url\ncontext_memberships_url=$ToolProxyBinding.memberships.url\nlink_memberships_url=$LtiLink.memberships.url', NULL, NULL, 0, 1507732242, 1507732294, NULL);
 
 -- --------------------------------------------------------
 
@@ -12867,7 +12872,8 @@ CREATE TABLE `mdl_sessions` (
 --
 
 INSERT INTO `mdl_sessions` (`id`, `state`, `sid`, `userid`, `sessdata`, `timecreated`, `timemodified`, `firstip`, `lastip`) VALUES
-(10, 0, 'lso3t7vco29d5j04ejgpouc8s1', 2, NULL, 1507735226, 1507735506, '172.22.0.1', '172.22.0.1');
+(10, 0, 'lso3t7vco29d5j04ejgpouc8s1', 2, NULL, 1507735226, 1507735506, '172.22.0.1', '172.22.0.1'),
+(12, 0, 'aen9mfquo660hnnr5bacesu3i2', 2, NULL, 1508320119, 1508320580, '172.22.0.1', '172.22.0.1');
 
 -- --------------------------------------------------------
 
@@ -13273,43 +13279,43 @@ CREATE TABLE `mdl_task_scheduled` (
 --
 
 INSERT INTO `mdl_task_scheduled` (`id`, `component`, `classname`, `lastruntime`, `nextruntime`, `blocking`, `minute`, `hour`, `day`, `month`, `dayofweek`, `faildelay`, `customised`, `disabled`) VALUES
-(1, 'moodle', '\\core\\task\\session_cleanup_task', 0, 1507732020, 0, '*', '*', '*', '*', '*', 0, 0, 0),
-(2, 'moodle', '\\core\\task\\delete_unconfirmed_users_task', 0, 1507734000, 0, '0', '*', '*', '*', '*', 0, 0, 0),
-(3, 'moodle', '\\core\\task\\delete_incomplete_users_task', 0, 1507734300, 0, '5', '*', '*', '*', '*', 0, 0, 0),
-(4, 'moodle', '\\core\\task\\backup_cleanup_task', 0, 1507734600, 0, '10', '*', '*', '*', '*', 0, 0, 0),
-(5, 'moodle', '\\core\\task\\tag_cron_task', 0, 1507777380, 0, '3', '3', '*', '*', '*', 0, 0, 0),
-(6, 'moodle', '\\core\\task\\context_cleanup_task', 0, 1507735500, 0, '25', '*', '*', '*', '*', 0, 0, 0),
-(7, 'moodle', '\\core\\task\\cache_cleanup_task', 0, 1507732200, 0, '30', '*', '*', '*', '*', 0, 0, 0),
-(8, 'moodle', '\\core\\task\\messaging_cleanup_task', 0, 1507732500, 0, '35', '*', '*', '*', '*', 0, 0, 0),
-(9, 'moodle', '\\core\\task\\send_new_user_passwords_task', 0, 1507732020, 0, '*', '*', '*', '*', '*', 0, 0, 0),
-(10, 'moodle', '\\core\\task\\send_failed_login_notifications_task', 0, 1507732020, 0, '*', '*', '*', '*', '*', 0, 0, 0),
-(11, 'moodle', '\\core\\task\\create_contexts_task', 0, 1507766400, 1, '0', '0', '*', '*', '*', 0, 0, 0),
-(12, 'moodle', '\\core\\task\\legacy_plugin_cron_task', 0, 1507732020, 0, '*', '*', '*', '*', '*', 0, 0, 0),
-(13, 'moodle', '\\core\\task\\grade_cron_task', 0, 1507732020, 0, '*', '*', '*', '*', '*', 0, 0, 0),
-(14, 'moodle', '\\core\\task\\events_cron_task', 0, 1507732020, 0, '*', '*', '*', '*', '*', 0, 0, 0),
-(15, 'moodle', '\\core\\task\\completion_regular_task', 0, 1507732020, 0, '*', '*', '*', '*', '*', 0, 0, 0),
-(16, 'moodle', '\\core\\task\\completion_daily_task', 0, 1507741380, 0, '3', '17', '*', '*', '*', 0, 0, 0),
-(17, 'moodle', '\\core\\task\\portfolio_cron_task', 0, 1507732020, 0, '*', '*', '*', '*', '*', 0, 0, 0),
-(18, 'moodle', '\\core\\task\\plagiarism_cron_task', 0, 1507732020, 0, '*', '*', '*', '*', '*', 0, 0, 0),
-(19, 'moodle', '\\core\\task\\calendar_cron_task', 0, 1507732020, 0, '*', '*', '*', '*', '*', 0, 0, 0),
-(20, 'moodle', '\\core\\task\\blog_cron_task', 0, 1507732020, 0, '*', '*', '*', '*', '*', 0, 0, 0),
-(21, 'moodle', '\\core\\task\\question_cron_task', 0, 1507732020, 0, '*', '*', '*', '*', '*', 0, 0, 0),
-(22, 'moodle', '\\core\\task\\registration_cron_task', 0, 1507770420, 0, '7', '1', '*', '*', '4', 0, 0, 0),
-(23, 'moodle', '\\core\\task\\check_for_updates_task', 0, 1507737600, 0, '0', '*/2', '*', '*', '*', 0, 0, 0),
-(24, 'moodle', '\\core\\task\\cache_cron_task', 0, 1507733400, 0, '50', '*', '*', '*', '*', 0, 0, 0),
-(25, 'moodle', '\\core\\task\\automated_backup_task', 0, 1507733400, 0, '50', '*', '*', '*', '*', 0, 0, 0),
-(26, 'moodle', '\\core\\task\\badges_cron_task', 0, 1507732200, 0, '*/5', '*', '*', '*', '*', 0, 0, 0),
-(27, 'moodle', '\\core\\task\\file_temp_cleanup_task', 0, 1507748100, 0, '55', '*/6', '*', '*', '*', 0, 0, 0),
-(28, 'moodle', '\\core\\task\\file_trash_cleanup_task', 0, 1507748100, 0, '55', '*/6', '*', '*', '*', 0, 0, 0),
-(29, 'moodle', '\\core\\task\\search_index_task', 0, 1507732200, 0, '*/30', '*', '*', '*', '*', 0, 0, 0),
-(30, 'moodle', '\\core\\task\\search_optimize_task', 0, 1507767300, 0, '15', '*/12', '*', '*', '*', 0, 0, 0),
-(31, 'moodle', '\\core\\task\\stats_cron_task', 0, 1507766400, 0, '0', '0', '*', '*', '*', 0, 0, 0),
-(32, 'moodle', '\\core\\task\\password_reset_cleanup_task', 0, 1507744800, 0, '0', '*/6', '*', '*', '*', 0, 0, 0),
-(33, 'moodle', '\\core\\task\\complete_plans_task', 0, 1507735140, 0, '19', '*', '*', '*', '*', 0, 0, 0),
-(34, 'moodle', '\\core\\task\\sync_plans_from_template_cohorts_task', 0, 1507734900, 0, '15', '*', '*', '*', '*', 0, 0, 0),
-(35, 'moodle', '\\core_files\\task\\conversion_cleanup_task', 0, 1507773600, 0, '0', '2', '*', '*', '*', 0, 0, 0),
-(36, 'moodle', '\\core\\oauth2\\refresh_system_tokens_task', 0, 1507732200, 0, '30', '*', '*', '*', '*', 0, 0, 0),
-(37, 'mod_forum', '\\mod_forum\\task\\cron_task', 0, 1507732020, 0, '*', '*', '*', '*', '*', 0, 0, 0),
+(1, 'moodle', '\\core\\task\\session_cleanup_task', 0, 1508320440, 0, '*', '*', '*', '*', '*', 0, 0, 0),
+(2, 'moodle', '\\core\\task\\delete_unconfirmed_users_task', 0, 1508320800, 0, '0', '*', '*', '*', '*', 0, 0, 0),
+(3, 'moodle', '\\core\\task\\delete_incomplete_users_task', 0, 1508321100, 0, '5', '*', '*', '*', '*', 0, 0, 0),
+(4, 'moodle', '\\core\\task\\backup_cleanup_task', 0, 1508321400, 0, '10', '*', '*', '*', '*', 0, 0, 0),
+(5, 'moodle', '\\core\\task\\tag_cron_task', 0, 1508379480, 0, '18', '3', '*', '*', '*', 0, 0, 0),
+(6, 'moodle', '\\core\\task\\context_cleanup_task', 0, 1508322300, 0, '25', '*', '*', '*', '*', 0, 0, 0),
+(7, 'moodle', '\\core\\task\\cache_cleanup_task', 0, 1508322600, 0, '30', '*', '*', '*', '*', 0, 0, 0),
+(8, 'moodle', '\\core\\task\\messaging_cleanup_task', 0, 1508322900, 0, '35', '*', '*', '*', '*', 0, 0, 0),
+(9, 'moodle', '\\core\\task\\send_new_user_passwords_task', 0, 1508320440, 0, '*', '*', '*', '*', '*', 0, 0, 0),
+(10, 'moodle', '\\core\\task\\send_failed_login_notifications_task', 0, 1508320440, 0, '*', '*', '*', '*', '*', 0, 0, 0),
+(11, 'moodle', '\\core\\task\\create_contexts_task', 0, 1508367600, 1, '0', '0', '*', '*', '*', 0, 0, 0),
+(12, 'moodle', '\\core\\task\\legacy_plugin_cron_task', 0, 1508320440, 0, '*', '*', '*', '*', '*', 0, 0, 0),
+(13, 'moodle', '\\core\\task\\grade_cron_task', 0, 1508320440, 0, '*', '*', '*', '*', '*', 0, 0, 0),
+(14, 'moodle', '\\core\\task\\events_cron_task', 0, 1508320440, 0, '*', '*', '*', '*', '*', 0, 0, 0),
+(15, 'moodle', '\\core\\task\\completion_regular_task', 0, 1508320440, 0, '*', '*', '*', '*', '*', 0, 0, 0),
+(16, 'moodle', '\\core\\task\\completion_daily_task', 0, 1508325000, 0, '10', '12', '*', '*', '*', 0, 0, 0),
+(17, 'moodle', '\\core\\task\\portfolio_cron_task', 0, 1508320440, 0, '*', '*', '*', '*', '*', 0, 0, 0),
+(18, 'moodle', '\\core\\task\\plagiarism_cron_task', 0, 1508320440, 0, '*', '*', '*', '*', '*', 0, 0, 0),
+(19, 'moodle', '\\core\\task\\calendar_cron_task', 0, 1508320440, 0, '*', '*', '*', '*', '*', 0, 0, 0),
+(20, 'moodle', '\\core\\task\\blog_cron_task', 0, 1508320440, 0, '*', '*', '*', '*', '*', 0, 0, 0),
+(21, 'moodle', '\\core\\task\\question_cron_task', 0, 1508320440, 0, '*', '*', '*', '*', '*', 0, 0, 0),
+(22, 'moodle', '\\core\\task\\registration_cron_task', 0, 1508735160, 0, '6', '6', '*', '*', '1', 0, 0, 0),
+(23, 'moodle', '\\core\\task\\check_for_updates_task', 0, 1508324400, 0, '0', '*/2', '*', '*', '*', 0, 0, 0),
+(24, 'moodle', '\\core\\task\\cache_cron_task', 0, 1508323800, 0, '50', '*', '*', '*', '*', 0, 0, 0),
+(25, 'moodle', '\\core\\task\\automated_backup_task', 0, 1508323800, 0, '50', '*', '*', '*', '*', 0, 0, 0),
+(26, 'moodle', '\\core\\task\\badges_cron_task', 0, 1508320500, 0, '*/5', '*', '*', '*', '*', 0, 0, 0),
+(27, 'moodle', '\\core\\task\\file_temp_cleanup_task', 0, 1508327700, 0, '55', '*/6', '*', '*', '*', 0, 0, 0),
+(28, 'moodle', '\\core\\task\\file_trash_cleanup_task', 0, 1508327700, 0, '55', '*/6', '*', '*', '*', 0, 0, 0),
+(29, 'moodle', '\\core\\task\\search_index_task', 0, 1508320800, 0, '*/30', '*', '*', '*', '*', 0, 0, 0),
+(30, 'moodle', '\\core\\task\\search_optimize_task', 0, 1508325300, 0, '15', '*/12', '*', '*', '*', 0, 0, 0),
+(31, 'moodle', '\\core\\task\\stats_cron_task', 0, 1508367600, 0, '0', '0', '*', '*', '*', 0, 0, 0),
+(32, 'moodle', '\\core\\task\\password_reset_cleanup_task', 0, 1508324400, 0, '0', '*/6', '*', '*', '*', 0, 0, 0),
+(33, 'moodle', '\\core\\task\\complete_plans_task', 0, 1508320920, 0, '2', '*', '*', '*', '*', 0, 0, 0),
+(34, 'moodle', '\\core\\task\\sync_plans_from_template_cohorts_task', 0, 1508321400, 0, '10', '*', '*', '*', '*', 0, 0, 0),
+(35, 'moodle', '\\core_files\\task\\conversion_cleanup_task', 0, 1508375280, 0, '8', '2', '*', '*', '*', 0, 0, 0),
+(36, 'moodle', '\\core\\oauth2\\refresh_system_tokens_task', 0, 1508322600, 0, '30', '*', '*', '*', '*', 0, 0, 0),
+(37, 'mod_forum', '\\mod_forum\\task\\cron_task', 0, 1508320440, 0, '*', '*', '*', '*', '*', 0, 0, 0),
 (38, 'mod_scorm', '\\mod_scorm\\task\\cron_task', 0, 1507732200, 0, '*/5', '*', '*', '*', '*', 0, 0, 0),
 (39, 'auth_cas', '\\auth_cas\\task\\sync_task', 0, 1507762800, 0, '0', '0', '*', '*', '*', 0, 0, 1),
 (40, 'auth_db', '\\auth_db\\task\\sync_users', 0, 1507810140, 0, '9', '13', '*', '*', '*', 0, 0, 1),
@@ -14738,7 +14744,13 @@ INSERT INTO `mdl_upgrade_log` (`id`, `type`, `plugin`, `version`, `targetversion
 (1169, 0, 'logstore_legacy', '2017051500', '2017051500', 'Plugin installed', NULL, '', 0, 1507732016),
 (1170, 0, 'logstore_standard', NULL, '2017051500', 'Starting plugin installation', NULL, '', 0, 1507732016),
 (1171, 0, 'logstore_standard', '2017051500', '2017051500', 'Upgrade savepoint reached', NULL, '', 0, 1507732016),
-(1172, 0, 'logstore_standard', '2017051500', '2017051500', 'Plugin installed', NULL, '', 0, 1507732016);
+(1172, 0, 'logstore_standard', '2017051500', '2017051500', 'Plugin installed', NULL, '', 0, 1507732016),
+(1173, 0, 'core', '2017051502.06', '2017051502.07', 'Starting core upgrade', NULL, '', 2, 1508320397),
+(1174, 0, 'core', '2017051502.07', '2017051502.07', 'Upgrade savepoint reached', NULL, '', 2, 1508320397),
+(1175, 0, 'core', '2017051502.07', '2017051502.07', 'Core upgraded', NULL, '', 2, 1508320398),
+(1176, 0, 'mod_forum', '2017051500', '2017051501', 'Starting plugin upgrade', NULL, '', 2, 1508320398),
+(1177, 0, 'mod_forum', '2017051501', '2017051501', 'Upgrade savepoint reached', NULL, '', 2, 1508320398),
+(1178, 0, 'mod_forum', '2017051501', '2017051501', 'Plugin upgraded', NULL, '', 2, 1508320398);
 
 -- --------------------------------------------------------
 
@@ -14827,7 +14839,7 @@ CREATE TABLE `mdl_user` (
 
 INSERT INTO `mdl_user` (`id`, `auth`, `confirmed`, `policyagreed`, `deleted`, `suspended`, `mnethostid`, `username`, `password`, `idnumber`, `firstname`, `lastname`, `email`, `emailstop`, `icq`, `skype`, `yahoo`, `aim`, `msn`, `phone1`, `phone2`, `institution`, `department`, `address`, `city`, `country`, `lang`, `calendartype`, `theme`, `timezone`, `firstaccess`, `lastaccess`, `lastlogin`, `currentlogin`, `lastip`, `secret`, `picture`, `url`, `description`, `descriptionformat`, `mailformat`, `maildigest`, `maildisplay`, `autosubscribe`, `trackforums`, `timecreated`, `timemodified`, `trustbitmask`, `imagealt`, `lastnamephonetic`, `firstnamephonetic`, `middlename`, `alternatename`) VALUES
 (1, 'manual', 1, 0, 0, 0, 1, 'guest', '$2y$10$E14PjUEHt2QIhTSTdV3A5ewCdnsyhmLxc2BakdANzpaEtTBhLHY5y', '', 'Guest user', ' ', 'root@localhost', 0, '', '', '', '', '', '', '', '', '', '', '', '', 'en', 'gregorian', '', '99', 0, 0, 0, 0, '', '', 0, '', 'This user is a special user that allows read-only access to some courses.', 1, 1, 0, 2, 1, 0, 0, 1507731975, 0, NULL, NULL, NULL, NULL, NULL),
-(2, 'manual', 1, 0, 0, 0, 1, 'admin', '$2y$10$ABDtQDdu1QI12A9DurAMfu1vI1ksWXmstIqo0ro0zv8QrKqQYof2.', '', 'Admin', 'User', 'user@example.com', 0, '', '', '', '', '', '', '', '', '', '', '', '', 'en', 'gregorian', '', '99', 1507732114, 1507735506, 1507733875, 1507735226, '172.22.0.1', '', 0, '', NULL, 1, 1, 0, 1, 1, 0, 0, 1507731975, 0, NULL, NULL, NULL, NULL, NULL);
+(2, 'manual', 1, 0, 0, 0, 1, 'admin', '$2y$10$ABDtQDdu1QI12A9DurAMfu1vI1ksWXmstIqo0ro0zv8QrKqQYof2.', '', 'Admin', 'User', 'user@example.com', 0, '', '', '', '', '', '', '', '', '', '', '', '', 'en', 'gregorian', '', '99', 1507732114, 1508320580, 1507735226, 1508320119, '172.22.0.1', '', 0, '', NULL, 1, 1, 0, 1, 1, 0, 0, 1507731975, 0, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -14947,7 +14959,7 @@ CREATE TABLE `mdl_user_lastaccess` (
 --
 
 INSERT INTO `mdl_user_lastaccess` (`id`, `userid`, `courseid`, `timeaccess`) VALUES
-(1, 2, 2, 1507735509);
+(1, 2, 2, 1508320580);
 
 -- --------------------------------------------------------
 
@@ -16667,6 +16679,7 @@ ALTER TABLE `mdl_forum_read`
 --
 ALTER TABLE `mdl_forum_subscriptions`
   ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `mdl_forusubs_usefor_uix` (`userid`,`forum`),
   ADD KEY `mdl_forusubs_use_ix` (`userid`),
   ADD KEY `mdl_forusubs_for_ix` (`forum`);
 
@@ -18789,7 +18802,7 @@ ALTER TABLE `mdl_cache_filters`
 -- AUTO_INCREMENT для таблицы `mdl_cache_flags`
 --
 ALTER TABLE `mdl_cache_flags`
-  MODIFY `id` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT для таблицы `mdl_capabilities`
 --
@@ -18934,7 +18947,7 @@ ALTER TABLE `mdl_competency_userevidencecomp`
 -- AUTO_INCREMENT для таблицы `mdl_config`
 --
 ALTER TABLE `mdl_config`
-  MODIFY `id` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=455;
+  MODIFY `id` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=456;
 --
 -- AUTO_INCREMENT для таблицы `mdl_config_log`
 --
@@ -19039,7 +19052,7 @@ ALTER TABLE `mdl_data_records`
 -- AUTO_INCREMENT для таблицы `mdl_editor_atto_autosave`
 --
 ALTER TABLE `mdl_editor_atto_autosave`
-  MODIFY `id` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT для таблицы `mdl_enrol`
 --
@@ -19144,7 +19157,7 @@ ALTER TABLE `mdl_external_services`
 -- AUTO_INCREMENT для таблицы `mdl_external_services_functions`
 --
 ALTER TABLE `mdl_external_services_functions`
-  MODIFY `id` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=266;
+  MODIFY `id` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=531;
 --
 -- AUTO_INCREMENT для таблицы `mdl_external_services_users`
 --
@@ -19499,7 +19512,7 @@ ALTER TABLE `mdl_log`
 -- AUTO_INCREMENT для таблицы `mdl_logstore_standard_log`
 --
 ALTER TABLE `mdl_logstore_standard_log`
-  MODIFY `id` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 --
 -- AUTO_INCREMENT для таблицы `mdl_log_display`
 --
@@ -20114,7 +20127,7 @@ ALTER TABLE `mdl_scorm_seq_ruleconds`
 -- AUTO_INCREMENT для таблицы `mdl_sessions`
 --
 ALTER TABLE `mdl_sessions`
-  MODIFY `id` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT для таблицы `mdl_stats_daily`
 --
@@ -20259,7 +20272,7 @@ ALTER TABLE `mdl_tool_usertours_tours`
 -- AUTO_INCREMENT для таблицы `mdl_upgrade_log`
 --
 ALTER TABLE `mdl_upgrade_log`
-  MODIFY `id` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1173;
+  MODIFY `id` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1179;
 --
 -- AUTO_INCREMENT для таблицы `mdl_url`
 --
