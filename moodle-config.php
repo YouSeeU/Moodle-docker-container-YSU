@@ -11,15 +11,15 @@ $CFG->dbname    = getenv('MYSQL_DATABASE_NAME');
 $CFG->dbuser    = getenv('MYSQL_USER');
 $CFG->dbpass    = getenv('MYSQL_PASSWORD');
 $CFG->prefix    = 'mdl_';
-$CFG->dboptions = array (
+$CFG->dboptions = [
     'dbpersist' => 0,
     'dbport' => getenv('MYSQL_PORT_NUMBER'),
     'dbsocket' => '',
     'dbcollation' => 'utf8mb4_unicode_ci',
-);
+];
 
-$CFG->wwwroot   = 'https://moodle.loc:444';
-$CFG->dataroot  = '/home/webapp/moodledata';
+$CFG->wwwroot   = getenv('MOODLE_URL');
+$CFG->dataroot  = '/var/www/moodledata';
 $CFG->admin     = getenv('MOODLE_USERNAME');
 
 $CFG->directorypermissions = 02777;
