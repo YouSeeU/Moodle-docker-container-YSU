@@ -27,4 +27,4 @@ COPY app_start.sh /usr/local/bin/
 
 RUN chmod +x /usr/local/bin/app_start.sh
 
-EXPOSE 80 443
+EXPOSE 80 444
