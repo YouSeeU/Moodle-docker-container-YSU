@@ -10,7 +10,7 @@ RUN apt-get update && \
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 # download Moodle
-RUN git clone --depth=1 -b v3.2.9 git://git.moodle.org/moodle.git /var/www/html/
+RUN git clone --depth=1 -b v3.3.3 git://git.moodle.org/moodle.git /var/www/html/
 
 # download Moosh
 RUN git clone --depth=1 -b 0.27 git://github.com/tmuras/moosh.git /var/www/html/moosh \
