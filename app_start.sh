@@ -17,7 +17,7 @@ MOODLE_CLI_DIR="/var/www/html/admin/cli"
 if [[ ! $(mysql -h "$MYSQL_HOST" -u"$MYSQL_USER" -p"$MYSQL_PASSWORD" -e "SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = '"$MYSQL_DATABASE_NAME"'") ]] ; then
     echo "Database does not exist. Trying to create ..."
 
-    php "$MOODLE_CLI_DIR/install.php"  --wwwroot="$MOODLE_URL" --dbtype="$DATABASE_TYPE" --dbhost="$MYSQL_HOST" --dbname="$MYSQL_DATABASE_NAME" --dbuser="$MYSQL_USER" --dbpass="$MYSQL_PASSWORD" --fullname="$MOODLE_SITENAME" --shortname="$MOODLE_SITENAME_SHORT" --adminuser="$MOODLE_USERNAME" --adminpass="$MOODLE_PASSWORD" --agree-license=1 --non-interactive
+    php "$MOODLE_CLI_DIR/install.php"  --wwwroot="$MOODLE_URL" --dbtype="$DATABASE_TYPE" --dbhost="$MYSQL_HOST" --dbname="$MYSQL_DATABASE_NAME" --dbuser="$MYSQL_USER" --dbpass="$MYSQL_PASSWORD" --fullname="$MOODLE_SITENAME" --shortname="$MOODLE_SITENAME_SHORT" --adminuser="$MOODLE_USERNAME" --adminpass="$MOODLE_PASSWORD" --adminemail="admin@moodle.loc" --agree-license=1 --non-interactive
 
     chmod a+r /var/www/html/config.php
 
@@ -51,3 +51,4 @@ for i in `seq 1 10`; do
 done
 
 apachectl -D FOREGROUND
+
